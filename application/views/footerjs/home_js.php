@@ -38,9 +38,11 @@
       $("#addExamButton").click(function(){
           
         var examName = $('#addExam').val(); 
+        //alert(examName);
         alert("Your stream is successfully created");
-        $.post("<?php echo site_url('examconfiguration/addExam') ?>", {examName : examName}, function(data){
-                $("#streamList1").html(data);
+
+        $.post("<?php echo base_url('Examconfiguration/addExam') ?>", {examName : examName}, function(data){
+                $("#examAdd1").html(data);
                 //alert(data);
         });
         $('#addStream').val("");

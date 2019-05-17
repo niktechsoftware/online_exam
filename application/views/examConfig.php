@@ -34,14 +34,15 @@
                  <div class="tab-pane active" id="examadd" role="tabpanel">
                  <div class="row exam_panel">
                    <div class="col-sm-6">
+                   <!--  <form method="post" action="<?php echo base_url();?>examconfiguration/addExam"> -->
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title">Add Exam Head</h5>
                         </div>
                         <div class="panel-body">
-                          <div class="text-black text-large exam_panel">
+                          <div class="text-black text-large ">
                             <span id="name" style="color:red;"></span>
-                            <input type="text" id="addExam" onkeyup="myFunction()">
+                            <input type="text" id="addExam"  onkeyup="myFunction()">
                             <a href="#" class="btn btn-sm btn-round btn-primary" id="addExamButton"><i class="ion-checkmark-round"></i>
                               Add Exam Head</a><!--<br--><br><br>
                             <div class="alert alert-warning"> Type a Exam Head name and press Add Exam Head.If Exam Head added
@@ -50,21 +51,22 @@
                           </div>
                         </div>
                       </div>
+                    <!-- </form> -->
                     </div>
                      <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title"> Exam List</h5>
                         </div>
-                        <div class="panel-body">
-                          <div class="text-black text-large exam_panel">
+                        <div class="panel-body" id="examAdd1">
+                         <!--  <div class="text-black text-large exam_panel">
                             <span id="name" style="color:red;"></span>
                             <input type="text" id="addStream" onkeyup="myFunction()">
                             <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Edit</a><!--<br-->&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                              Edit</a><!--<br--><!-- &nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
                               Delete</a><br><br>
                            
-                          </div>
+                          </div> --> 
                         </div>
                       </div>
                     </div>

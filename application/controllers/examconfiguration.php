@@ -29,11 +29,39 @@ class Examconfiguration extends CI_Controller{
 	}
 	public function addExam(){
 		$exam=$this->input->post('examName');
+
 		$this->load->model('examConfigModel');
 		$examList = $this->examConfigModel->addExam($exam);
 		//print_r($streamList);
 		$data['examList'] = $examList;
-		$this->load->view("examconfiuration/examConfigur",$data);
+		//$this->load->view("examconfiuration/examConfigur",$data);
+		$this->load->view("ajax/addExam",$data);
+	}
+	public function updateExam(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->updateStream($this->input->post("examId"),$this->input->post("examName"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addExam') ?>", function(data){
+			            $("#examAdd1").html(data);
+					});
+			</script>
+			<?php 
+		}	
+		
+	}
+
+	public function deleteExam(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->deleteStream($this->input->post("examId"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addExam') ?>", function(data){
+			            $("#examAdd1").html(data);
+					});
+			</script>
+			<?php 
+		}
 	}
 }
 ?>
