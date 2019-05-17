@@ -4,11 +4,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 
 public function index()
-	{
+{
 
- 	//if($this->session->userdata("is_login")){
+ 
+        $this->load->view('auth/login');
+  
 
-		$data['title'] = 'Home Page';
+}
+
+public function home()
+{
+
+	$data['title'] = 'Home Page';
 		$data['headercss'] = 'home_css';
 		$data['header'] = 'header';
 		$data['sidemenu'] = 'sidemenu';
@@ -17,10 +24,12 @@ public function index()
 		$data['footer'] = 'footer';
 		$data['footerjs'] = 'home_js';
     $this->load->view("base/body", $data);
-	//}else{
-		//redirect('login');
-	//}
-
+}
+public function logout()
+{
+		$this->session->unset_userdata();
+		$this->session->sess_destroy();
+		redirect('welcome');
 }
 
 	
