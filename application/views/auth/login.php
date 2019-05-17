@@ -49,9 +49,10 @@
             <a class="mobile-menu" id="mobile-collapse" href="#!">
               <i class="feather icon-menu"></i>
             </a>
-            <a href="index.html">
+           <!--  <a href="index.html">
               <img class="img-fluid" src="<?php echo base_url();?>assets/images/logo.png" alt="Theme-Logo" />
-            </a>
+            </a> -->
+           <h4>Online Exam</h4> 
             <a class="mobile-options">
               <i class="feather icon-more-horizontal"></i>
             </a>
@@ -104,8 +105,8 @@
                       background-size: cover;
                       position: relative;">
                       <div class="card-header">
-                        <h5>Register Here</h5>
-                        <span>lorem ipsum dolor sit amet, consectetur adipisicing elit</span>
+                        <h5>Login Here</h5>
+                        <span>Please Login here to access the Dashboard</span>
 
                       </div>
                       <div class="card-block">
