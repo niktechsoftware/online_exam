@@ -24,11 +24,16 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.mCustomScrollbar.css">
     <style type="text/css">
         .exam_panel{
-            margin: 20px;
+            margin: 0px;
         }
         .exam_panel_body{
             border:1px solid;
             border-color: #d0c5c5;
         }
+        .bg_info{
+                background-color: #c3126e !important;
+                 color: #fff;
+        }
+        
     </style>
 </head>
