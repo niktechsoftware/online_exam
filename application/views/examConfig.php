@@ -32,17 +32,17 @@
                <div class="tab-content card-block">
 
                  <div class="tab-pane active" id="examadd" role="tabpanel">
-                 <div class="row">
+                 <div class="row exam_panel">
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title">Add Exam Head</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title">Add Exam Head</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
                             <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                            <input type="text" id="addExam" onkeyup="myFunction()">
+                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addExamButton"><i class="ion-checkmark-round"></i>
                               Add Exam Head</a><!--<br--><br><br>
                             <div class="alert alert-warning"> Type a Exam Head name and press Add Exam Head.If Exam Head added
                               successfully then it show in right side panel where you can change the name and Delete it.
@@ -53,8 +53,8 @@
                     </div>
                      <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title"> Exam List</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title"> Exam List</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
@@ -72,11 +72,11 @@
                  </div>
 
                  <div class="tab-pane" id="addtest" role="tabpanel">
-                    <div class="row">
+                    <div class="row exam_panel" >
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title">Add Test Name</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title">Add Test Name</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
@@ -93,8 +93,8 @@
                     </div>
                      <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title"> Test Name List</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title"> Test Name List</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
@@ -112,11 +112,11 @@
                  </div>
                  <!----3 tab start--->
                  <div class="tab-pane" id="addsub" role="tabpanel">
-                    <div class="row">
+                    <div class="row exam_panel">
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title">Add Subject Name</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title">Add Subject Name</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
@@ -132,8 +132,8 @@
                     </div>
                      <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h4 class="panel-title"> Subject List</h4>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title"> Subject List</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">

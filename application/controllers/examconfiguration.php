@@ -27,5 +27,13 @@ class Examconfiguration extends CI_Controller{
 		$data['footerjs'] = 'home_js';
     $this->load->view("base/body", $data);
 	}
+	public function addExam(){
+		$exam=$this->input->post('examName');
+		$this->load->model('examConfigModel');
+		$examList = $this->examConfigModel->addExam($exam);
+		//print_r($streamList);
+		$data['examList'] = $examList;
+		$this->load->view("examconfiuration/examConfigur",$data);
+	}
 }
 ?>
