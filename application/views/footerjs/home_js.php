@@ -35,22 +35,40 @@
 <script >
     
   $(document).ready(function() {
+    // add exam code start
       $("#addExamButton").click(function(){
           
         var examName = $('#addExam').val(); 
         //alert(examName);
-        alert("Your stream is successfully created");
+        alert("Your exam is successfully created");
 
-        $.post("<?php echo base_url('Examconfiguration/addExam') ?>", {examName : examName}, function(data){
+        $.post("<?php echo base_url('examconfiguration/addExam') ?>", {examName : examName}, function(data){
                 $("#examAdd1").html(data);
                 //alert(data);
         });
-        $('#addStream').val("");
+        $('#addExam').val("");
         });
-} );
+      // End exam code
+
+      // start add test code
+      $("#addTestButton").click(function(){
+         var testName = $('#addTest').val();
+         var examHead = $('#examListshow').val();
+         var testDesc = $('#descTest').val();
+         var testMarks = $('#marksTest').val();
+         $.post("<?php echo base_url('examconfiguration/addTest')?>",{testName : testName,
+            examHead : examHead,
+            testDesc : testDesc,
+            testMarks : testMarks}, function(data){
+            
+            $("#testAdd1").html(data);
+            alert("Your test succesfully add");
+         });
+         $("#addTest").val("");
+      });
+      // end add test code
+  });
 
   </script>
 
-</body>
 
-</html>

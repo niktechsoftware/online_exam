@@ -38,12 +38,12 @@
                                     
                                     
                                         <li class="">
-                                            <a href="<?php echo base_url();?>Examconfiguration/examConfigur">
+                                            <a href="<?php echo base_url();?>examconfiguration/examConfigur">
                                                 <span class="pcoded-mtext">Exam Configur</span>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a href="<?php echo base_url();?>Examconfiguration/quesConfigur">
+                                            <a href="<?php echo base_url();?>examconfiguration/quesConfigur">
                                                 <span class="pcoded-mtext">Question Configur</span>
                                             </a>
                                         </li>

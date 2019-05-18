@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/jquery.mCustomScrollbar.css">
     <style type="text/css">
         .exam_panel{
-            margin: 0px;
+            margin: 20px;
         }
         .exam_panel_body{
             border:1px solid;

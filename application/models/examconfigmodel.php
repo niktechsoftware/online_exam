@@ -1,11 +1,11 @@
 <?php
 	class Examconfigmodel extends CI_Model{
+		//add exam section start
 		public function addExam($exam){
 		$db = array(
 			"exam_head" => $exam,
 				//"school_code"=>$this->session->userdata("school_code"),
 		);
-
 		if(strlen($exam) > 1){
 			
 			$this->db->insert("exam_head",$db);
@@ -14,42 +14,70 @@
 		$query = $this->db->get("exam_head");
 		return $query;
 	}
-
-		public function updateStream($examId,$examName){
+		public function updateExam($examId,$examName){
 		$val = array(
 				"exam_head" => $examName,
 				//"school_code"=>$this->session->userdata("school_code"),
 		);
-		
 		$this->db->where("id",$examId);
 		$query = $this->db->update("exam_head",$val);
 		return true;
 	}
-	
-	public function deleteStream($examId){
+	public function deleteExam($examId){
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
-		  $class=$this->db->get('exam_head')->result();
-		  print_r($class);
-		foreach ($class as $value)
+		  $exam=$this->db->get('exam_head')->result();
+		  //print_r($class);
+		foreach ($exam as $value)
 		   {
 		   	  if($value->exam_head==$examId)
 		   	  {
-               
-                echo "<script>alert('you can not delete this stream because this stream is already used in class');</script>";
+                echo "<script>alert('you can not delete this exam because this exam is already used in class');</script>";
                 return false;
-
-
 		   	  }
 		   }
 		   	  	$this->db->where("id",$examId);
 		    $query = $this->db->delete("exam_head");
 		    return $query;
+		}
+		// end add  exam section  
+		//start add test section
+		public function addTest($test,$exam_head,$testDesc,$testMarks){
+			$db = array(
+			"test_name" => $test,
+			"exam_head_id" =>$exam_head,
+			"test_description" => $testDesc,
+			"test_marks" => $testMarks
 
-		   	 
+				//"school_code"=>$this->session->userdata("school_code"),
+			);
+			if(strlen($test)>1&&strlen($testDesc)>1&&strlen($testMarks)>1)
+			{
+			   $res = $this->db->insert("test_name",$db);
+			    if($res)
+			    {
+			   $query = $this->db->get("test_name");
+			   return $query;
+			    }
+			} 
+			else 
+			 {
+				echo "notttt";
+			}
+			//$this->db->where("school_code",$this->session->userdata("school_code"));es
+		}
 
-		// $this->db->where("id",$streamId);
-		// $query = $this->db->delete("stream");
-		// return $query;
+
+		public function updateTest($testId,$testName){
+		$val = array(
+				"test_name" => $testName,
+				//"test_description" => 
+				//"school_code"=>$this->session->userdata("school_code"),
+		);
+		$this->db->where("id",$examId);
+		$query = $this->db->update("exam_head",$val);
+		return true;
 	}
+
+		//end add test section
 	}
 ?>

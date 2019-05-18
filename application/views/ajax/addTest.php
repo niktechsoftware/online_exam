@@ -1,16 +1,35 @@
 <?php
 $i = 1;
-if(isset($examList)):
+if(isset($testList)):
 
-	foreach ($examList->result() as $row):
-		//print_r($row);
+	foreach ($testList->result() as $row):
+		//print_r($row);exit();
 ?>
 		<div class="text-white text-sm pull-left space10">
-			<span id="name2" Style="color:red;"></span>
-			<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->exam_head;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
-			<input type="hidden" id="examId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
-			<a href="#" class="btn btn-sm btn-light-green" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
-			<a href="#" class="btn btn-sm btn-light-green" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+			<table>
+				<tr>
+					<th>Test Name </th>
+					<th>Test Descripton</th>
+					<th>Test Marks</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->test_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="hidden" id="examId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
+					</td>
+					<td>
+						<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+					</td>
+					<td>
+						<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->test_marks;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+					</td>
+					<td>
+						<a href="#" class="btn btn-sm btn-light-green" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+						<a href="#" class="btn btn-sm btn-light-green" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+					</td>
+				</tr>
+			</table>
 		</div>
 		
 <?php

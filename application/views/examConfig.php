@@ -40,7 +40,7 @@
                           <h5 class="panel-title">Add Exam Head</h5>
                         </div>
                         <div class="panel-body">
-                          <div class="text-black text-large ">
+                          <div class="text-black text-large exam_panel ">
                             <span id="name" style="color:red;"></span>
                             <input type="text" id="addExam"  onkeyup="myFunction()">
                             <a href="#" class="btn btn-sm btn-round btn-primary" id="addExamButton"><i class="ion-checkmark-round"></i>
@@ -74,6 +74,38 @@
                  </div>
 
                  <div class="tab-pane" id="addtest" role="tabpanel">
+                  <div class="row">
+                        <div class="col-md-12">
+                          <div class="tab-content card-block">
+                           <div class="tab-pane active" id="quesadd" role="tabpanel">
+                              <div class="row" >
+                                <div class="col-sm-6">
+                                  <div class="panel">
+                                    <div class="panel-heading bg_info">
+                                      <h6 class="panel-title ">Exam Head</h6>
+                                    </div>
+                                    <div class="panel-body">
+                                      <div class="form-group">
+                                        <?php 
+                                     $view=   $this->db->get("exam_head")->result(); 
+                                     ?>
+                                        <select id="examListshow" class="form-control">
+                                          <option value="">Select Exam Head</option>
+                                          <?php foreach($view as $row)
+                                        { ?>
+                                          <option value="<?php echo $row->id;?>"><?php echo $row->exam_head;?></option>
+                                            <?php  }?>
+                                        </select>
+                                    
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     <div class="row exam_panel" >
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
@@ -82,10 +114,38 @@
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Add Test Name</a><!--<br--><br><br>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-4">Test Name</div>
+                                <div class="col-md-8">
+                                  <input type="text" id="addTest" onkeyup="myFunction()">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-4">Test Description</div>
+                                <div class="col-md-8">
+                                  <input type="text" id="descTest" onkeyup="myFunction()">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-4">Test Marks</div>
+                                <div class="col-md-8">
+                                  <input type="text" id="marksTest" onkeyup="myFunction()">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-12">
+                                 <a href="#" class="btn btn-sm btn-round btn-primary" id="addTestButton"><i class="ion-checkmark-round"></i>
+                              Add Test Description</a>
+                                </div>
+                              </div>
+                            </div>
                             <div class="alert alert-warning"> Type a Test name and press Add Test Name.If Test Name added
                               successfully then it show in right side panel where you can change the name and Delete it.
                             </div>
@@ -94,19 +154,13 @@
                       </div>
                     </div>
                      <div class="col-sm-6">
+                      
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title"> Test Name List</h5>
                         </div>
-                        <div class="panel-body">
-                          <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Edit</a><!--<br-->&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Delete</a><br><br>
-                           
-                          </div>
+                        <div class="panel-body" id="addTest1">
+                          
                         </div>
                       </div>
                     </div>
