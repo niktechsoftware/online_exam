@@ -60,9 +60,7 @@ class Examconfiguration extends CI_Controller{
 		}
 	}
 	// add update delete exam code end
-
 	// add update delete test code start
-	
 	public function addTest(){
 		$test = $this->input->post('testName');
 		$exam_head = $this ->input->post('examHead');
@@ -70,35 +68,73 @@ class Examconfiguration extends CI_Controller{
 		$testMarks = $this ->input->post('testMarks');
 		$this->load->model('examConfigModel');
 		$testList = $this->examConfigModel->addTest($test,$exam_head,$testDesc,$testMarks);
-		//print_r($testList);exit();
 		$data['testList'] = $testList;
-		//print_r($data);exit();
 		$this->load->view("ajax/addTest",$data);
-
 	}
 	public function updateTest(){
 		$this->load->model('examconfigmodel');
-		if($query = $this->examconfigmodel->updateExam($this->input->post("testId"),$this->input->post("testName"),$this->input->post(""))){
+		if($query = $this->examconfigmodel->updateTest($this->input->post("testId"),
+			$this->input->post("testName"),
+			$this->input->post("testDescription"),
+			$this->input->post("testMarks"))){
 			?>
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addTest') ?>", function(data){
-			            $("#testAdd1").html(data);
+			            $("#addTest1").html(data);
 					});
 			</script>
 			<?php 
 		}
 	}
+
 	public function deleteTest(){
 		$this->load->model('examconfigmodel');
-		if($query = $this->examconfigmodel->deleteExam($this->input->post("examId"))){
+		if($query = $this->examconfigmodel->deleteTest($this->input->post("testId"))){
 			?>
 			<script>
-			        $.post("<?php echo base_url('examconfiguration/addExam') ?>", function(data){
-			            $("#examAdd1").html(data);
+			        $.post("<?php echo base_url('examconfiguration/addTest') ?>", function(data){
+			            $("#addTest1").html(data);
 					});
 			</script>
 			<?php 
 		}
 	}
+	// add update delete test code end
+	// add update delete Subject code start
+		public function addSubject(){
+		$sub=$this->input->post('subjectName');
+		$examListshow=$this->input->post('examListshow');
+		$testListshow=$this->input->post('testListshow');
+		$this->load->model('examConfigModel');
+		$subjectList = $this->examConfigModel->addSubject($sub,$examListshow,$testListshow);
+		$data['subjectList'] = $subjectList;
+
+		$this->load->view("ajax/addSubject",$data);
+	}
+	public function updateSubject(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->updateSubject($this->input->post("subjectId"),$this->input->post("subjectName"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){
+			            $("#addSubject1").html(data);
+					});
+			</script>
+			<?php 
+		}
+	}
+	public function deleteSubject(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->deleteSubject($this->input->post("subjectId"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){
+			            $("#addSubject1").html(data);
+					});
+			</script>
+			<?php 
+		}
+	}
+	// add update delete Subject code end
 }
 ?>

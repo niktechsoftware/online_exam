@@ -61,12 +61,31 @@
             testDesc : testDesc,
             testMarks : testMarks}, function(data){
             
-            $("#testAdd1").html(data);
+            $("#addTest1").html(data);
             alert("Your test succesfully add");
          });
          $("#addTest").val("");
       });
       // end add test code
+      // start add subject code
+         $("#addSubjectButton").click(function(){
+        var subjectName = $('#addSubject').val(); 
+         var examListshow = $('#examListshow').val();
+         //alert(examListshow); 
+          var testListshow = $('#testListshow').val(); 
+        alert("Your Subject is successfully created");
+        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", {
+          subjectName : subjectName,
+          examListshow : examListshow,
+          testListshow : testListshow,
+        }, function(data){
+                $("#addSubject1").html(data);
+                //alert(data);
+        });
+
+        $('#addSubject').val("");
+        });
+      // end add subject code
   });
 
   </script>

@@ -20,7 +20,7 @@
                    <div class="slide"></div>
                  </li>
                  <li class="nav-item">
-                   <a class="nav-link" data-toggle="tab" href="#addtest" role="tab">Add Test</a>
+                   <a class="nav-link" data-toggle="tab" href="#addtestPanel" role="tab">Add Test</a>
                    <div class="slide"></div>
                  </li>
                   <li class="nav-item">
@@ -73,7 +73,7 @@
                  </div>
                  </div>
 
-                 <div class="tab-pane" id="addtest" role="tabpanel">
+                 <div class="tab-pane" id="addtestPanel" role="tabpanel">
                   <div class="row">
                         <div class="col-md-12">
                           <div class="tab-content card-block">
@@ -168,6 +168,63 @@
                  </div>
                  <!----3 tab start--->
                  <div class="tab-pane" id="addsub" role="tabpanel">
+                  <!-----exam and subject section start--->
+                  <div class="row">
+                        <div class="col-md-12">
+                          <div class="tab-content card-block">
+                           <div class="tab-pane active" id="quesadd" role="tabpanel">
+                              <div class="row" >
+                                <div class="col-sm-6">
+                                  <div class="panel">
+                                    <div class="panel-heading bg_info">
+                                      <h6 class="panel-title ">Exam Head</h6>
+                                    </div>
+                                    <div class="panel-body">
+                                      <div class="form-group">
+                                        <?php 
+                                     $view=   $this->db->get("exam_head")->result(); 
+                                     ?>
+                                        <select id="examListshow" class="form-control">
+                                          <option value="">Select Exam Head</option>
+                                          <?php foreach($view as $row)
+
+                                        { 
+                                          ?>
+                                          <option value="<?php echo $row->id;?>"><?php echo $row->exam_head;?></option>
+                                            <?php  }?>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6">
+                                  <div class="panel">
+                                    <div class="panel-heading bg_info">
+                                      <h6 class="panel-title ">Test Name</h6>
+                                    </div>
+                                    <div class="panel-body">
+                                      <div class="form-group">
+                                        <?php 
+                                     $view=   $this->db->get("test_name")->result(); 
+                                     ?>
+                                        <select id="testListshow" class="form-control">
+                                          <option value="">Select Test</option>
+                                          <?php foreach($view as $row)
+                                        { ?>
+                                          <option value="<?php echo $row->id;?>"><?php echo $row->test_name;?></option>
+                                            <?php  }?>
+                                        </select>
+                                    
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!----exam and subject section end------->
                     <div class="row exam_panel">
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
@@ -177,8 +234,8 @@
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
                             <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                            <input type="text" id="addSubject" onkeyup="myFunction()">
+                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addSubjectButton"><i class="ion-checkmark-round"></i>
                               Add Subject</a><!--<br--><br><br>
                             <div class="alert alert-warning"> Type a subject  and press Add Subject.If Subject added successfully then it show in right side panel where you can change the name and Delete it.
                             </div>
@@ -191,15 +248,8 @@
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title"> Subject List</h5>
                         </div>
-                        <div class="panel-body">
-                          <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Edit</a><!--<br-->&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Delete</a><br><br>
-                           
-                          </div>
+                        <div class="panel-body" id="addSubject1">
+                          
                         </div>
                       </div>
                     </div>
@@ -213,8 +263,6 @@
          </div>
          <!-- Row end -->
 
-
-         <!-- Row end -->
        </div>
      </div>
      <!-- Material tab card end -->
