@@ -105,15 +105,16 @@ class Examconfiguration extends CI_Controller{
 		$sub=$this->input->post('subjectName');
 		$examListshow=$this->input->post('examListshow');
 		$testListshow=$this->input->post('testListshow');
+		$questionNo = $this->input->post('questionNo');
 		$this->load->model('examConfigModel');
-		$subjectList = $this->examConfigModel->addSubject($sub,$examListshow,$testListshow);
+		$subjectList = $this->examConfigModel->addSubject($sub,$examListshow,$testListshow,$questionNo);
 		$data['subjectList'] = $subjectList;
 
 		$this->load->view("ajax/addSubject",$data);
 	}
 	public function updateSubject(){
 		$this->load->model('examconfigmodel');
-		if($query = $this->examconfigmodel->updateSubject($this->input->post("subjectId"),$this->input->post("subjectName"))){
+		if($query = $this->examconfigmodel->updateSubject($this->input->post("subjectId"),$this->input->post("subjectName"),$this->input->post("questionNo"))){
 			?>
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){

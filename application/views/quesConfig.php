@@ -40,8 +40,12 @@
               </div>
               <div class="panel-body">
                 <div class="form-group">
+                  <?php $examShow = $this->db->get("exam_head")->result();?>
                   <select id="streamListshow" class="form-control">
                     <option value="">Select Exam Head</option>
+                    <?php foreach($examShow as $view){?>
+                      <option value="<?php echo $view->id;?>"><?php echo $view->exam_head;?></option>
+                    <?php } ?>
                   </select>
                 </div>
               </div>

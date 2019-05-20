@@ -86,11 +86,12 @@
 		}
 		//end add test section
 		//start add Subject section
-			public function addSubject($sub,$examListshow,$testListshow){
+			public function addSubject($sub,$examListshow,$testListshow,$questionNo){
 				$db = array(
 					"subject_name" => $sub,
 					"exam_head_id" => $examListshow,
-					"test_name_id" => $testListshow
+					"test_name_id" => $testListshow,
+					"subject_ques_no" => $questionNo
 				);
 				if(strlen($sub)>1){
 					$this->db->insert("subject",$db);
@@ -98,9 +99,10 @@
 				$query = $this->db->get("subject");
 				return $query;
 			}
-			public function updateSubject($subjectId,$subjectName){
+			public function updateSubject($subjectId,$subjectName,$questionNo){
 		$val = array(
 				"subject_name" => $subjectName,
+				"subject_ques_no" => $questionNo
 				//"school_code"=>$this->session->userdata("school_code"),
 		);
 		$this->db->where("id",$subjectId);

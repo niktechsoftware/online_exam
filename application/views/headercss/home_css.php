@@ -34,6 +34,13 @@
                 background-color: #c3126e !important;
                  color: #fff;
         }
+        .subject_btn{
+            border-color: gray;
+            border-radius: 2rem;;
+            margin: 10px;
+            background-color:#715cb8;
+            color: white;
+        }
         
     </style>
 </head>
