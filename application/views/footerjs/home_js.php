@@ -37,11 +37,9 @@
   $(document).ready(function() {
     // add exam code start
       $("#addExamButton").click(function(){
-          
         var examName = $('#addExam').val(); 
         //alert(examName);
         alert("Your exam is successfully created");
-
         $.post("<?php echo base_url('examconfiguration/addExam') ?>", {examName : examName}, function(data){
                 $("#examAdd1").html(data);
                 //alert(data);
