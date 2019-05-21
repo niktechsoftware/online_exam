@@ -16,7 +16,7 @@ class Examconfiguration extends CI_Controller{
     $this->load->view("base/body", $data);
 	}
 	public function quesConfigur(){
-		$data['title'] = 'Exam Configur Area';
+		$data['title'] = 'Question Configur Area';
 		$data['headercss'] = 'home_css';
 		$data['header'] = 'header';
 		$data['sidemenu'] = 'sidemenu';
@@ -24,17 +24,22 @@ class Examconfiguration extends CI_Controller{
 		$data['subtitle'] = 'Question Configuration';
 		$data['customizer'] = 'customizer';
 		$data['footer'] = 'footer';
-		$data['footerjs'] = 'home_js';
+		$data['footerjs'] = 'question_js';
     $this->load->view("base/body", $data);
 	}
-	//add update delete exam code start
+	
 	public function addExam(){
 		$exam=$this->input->post('examName');
 		$this->load->model('examConfigModel');
+		if($exam){
 		$examList = $this->examConfigModel->addExam($exam);
+	}else{
+		$examList = $this->examConfigModel->addsExam();
+	}
 		$data['examList'] = $examList;
 		$this->load->view("ajax/addExam",$data);
 	}
+	//add update delete exam code start
 	public function updateExam(){
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->updateExam($this->input->post("examId"),$this->input->post("examName"))){
@@ -62,16 +67,40 @@ class Examconfiguration extends CI_Controller{
 	// add update delete exam code end
 	// add update delete test code start
 	public function addTest(){
+		//$examnm = $this->input->post('examnm');
+		//$quer = $this->db->where('exam_head_id',$examnm);
+		//$query = $this->db->get("test_name");
+		//print_r($query);exit();
+
+		//if($quer->num_rows()>0)
 		$test = $this->input->post('testName');
 		$exam_head = $this ->input->post('examHead');
 		$testDesc = $this ->input->post('testDesc');
 		$testMarks = $this ->input->post('testMarks');
 		$this->load->model('examConfigModel');
-		$testList = $this->examConfigModel->addTest($test,$exam_head,$testDesc,$testMarks);
+		if($test && $exam_head && $testDesc && $testMarks){
+			$testList = $this->examConfigModel->addTest($test,$exam_head,$testDesc,$testMarks);
+		}else{
+			$testList = $this->examConfigModel->addsTest();
+		}
 		$data['testList'] = $testList;
 		$this->load->view("ajax/addTest",$data);
 	}
+	// function addTest2(){
+ //    //$this->db->where("school_code",$this->session->userdata("school_code"));
+	// 	$em = $this->input->post('examnm');
+	// 	$this->db->where('exam_head_id',$em);
+ //        $var = $this->db->get("test_name");
+ //            if($var->num_rows() > 0){
+ //                echo '<option value="">-Select Test Name-</option>';
+ //                foreach ($var->result() as $row){
+ //                    echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
+ //                }
+ //                echo '<option value="all">All</option>';
+ //            }
+ //        }
 	public function updateTest(){
+
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->updateTest($this->input->post("testId"),
 			$this->input->post("testName"),
@@ -101,13 +130,30 @@ class Examconfiguration extends CI_Controller{
 	}
 	// add update delete test code end
 	// add update delete Subject code start
+	function addSubject2(){
+    //$this->db->where("school_code",$this->session->userdata("school_code"));
+		$em = $this->input->post('testnm');
+		$this->db->where('exam_head_id',$em);
+        $var = $this->db->get("test_name");
+            if($var->num_rows() > 0){
+                echo '<option value="">-Select Test Name-</option>';
+                foreach ($var->result() as $row){
+                    echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
+                }
+                echo '<option value="all">All</option>';
+            }
+        }
 		public function addSubject(){
 		$sub=$this->input->post('subjectName');
 		$examListshow=$this->input->post('examListshow');
 		$testListshow=$this->input->post('testListshow');
 		$questionNo = $this->input->post('questionNo');
 		$this->load->model('examConfigModel');
-		$subjectList = $this->examConfigModel->addSubject($sub,$examListshow,$testListshow,$questionNo);
+		if($sub && $examListshow && $testListshow && $questionNo){
+			$subjectList = $this->examConfigModel->addSubject($sub,$examListshow,$testListshow,$questionNo);
+		}else{
+			$subjectList = $this->examConfigModel->addsSubject();
+		}
 		$data['subjectList'] = $subjectList;
 
 		$this->load->view("ajax/addSubject",$data);
@@ -115,10 +161,12 @@ class Examconfiguration extends CI_Controller{
 	public function updateSubject(){
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->updateSubject($this->input->post("subjectId"),$this->input->post("subjectName"),$this->input->post("questionNo"))){
+			// print_r($query);exit;
 			?>
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){
 			            $("#addSubject1").html(data);
+
 					});
 			</script>
 			<?php 
@@ -137,5 +185,32 @@ class Examconfiguration extends CI_Controller{
 		}
 	}
 	// add update delete Subject code end
+	///ADD UPDATE DELETE SECTION CODE STRART
+		public function addTest2(){
+    //$this->db->where("school_code",$this->session->userdata("school_code"));
+		$tst = $this->input->post('examnm');
+		$this->db->where('exam_head_id',$tst);
+        $var = $this->db->get("test_name");
+            if($var->num_rows() > 0){
+                echo '<option value="">-Select Test Name-</option>';
+                foreach ($var->result() as $row){
+                    echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
+                }
+                echo '<option value="all">All</option>';
+            }
+        }
+        public function addSubject3(){
+        	$sub = $this->input->post('subnm');
+        	$this->db->where('test_name_id',$sub);
+        	$var = $this->db->get("subject");
+        	if($var->num_row()>0){
+        		echo '<option value="">-Select Test Name-</option>';
+                foreach ($var->result() as $row){
+                    echo '<option value="'.$row->id.'">'.$row->subject_name.'</option>';
+                }
+                echo '<option value="all">All</option>';
+        	}
+        }
+	/// ADD UPDATE DELETE SECTION CODE END
 }
 ?>

@@ -7,13 +7,19 @@
 				//"school_code"=>$this->session->userdata("school_code"),
 		);
 		if(strlen($exam) > 1){
-			
 			$this->db->insert("exam_head",$db);
 		}
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
 		$query = $this->db->get("exam_head");
 		return $query;
 	}
+
+	public function addsExam(){
+		//$this->db->where("school_code",$this->session->userdata("school_code"));
+		$query = $this->db->get("exam_head");
+		return $query;
+	}
+	//update Exam code
 		public function updateExam($examId,$examName){
 		$val = array(
 				"exam_head" => $examName,
@@ -46,19 +52,17 @@
 			"test_marks" => $testMarks
 				//"school_code"=>$this->session->userdata("school_code"),
 			);
-			if(strlen($test)>1&&strlen($testDesc)>1&&strlen($testMarks)>1)
-			{
+			if(strlen($test)>1&&strlen($testDesc)>1&&strlen($testMarks)>1){
 			    $this->db->insert("test_name",$db);
 			    }
 			   $query = $this->db->get("test_name");
-			    //print_r($query);exit();
 			   return $query;
-			   
-			// } 
-			// else {
-			// 	echo "notttt";
-			// }
 			//$this->db->where("school_code",$this->session->userdata("school_code"));es
+		}
+		public function addsTest(){
+			//$quer = $this->db->where('exam_head_id',$examnm);
+			$query = $this->db->get("test_name");
+			return $query;
 		}
 		public function updateTest($testId,$testName,$testDescription,$testMarks){
 		$val = array(
@@ -99,6 +103,10 @@
 				$query = $this->db->get("subject");
 				return $query;
 			}
+			public function addsSubject(){
+				$query = $this->db->get("subject");
+				return $query;
+			}
 			public function updateSubject($subjectId,$subjectName,$questionNo){
 		$val = array(
 				"subject_name" => $subjectName,
@@ -123,5 +131,13 @@
 		    return $query;
 		}
 		//end add Subject section
+
+
+		///ADD UPDATE DELETE SECTION OF QUESTION STart
+
+			public function addQues(){
+
+			}
+		///ADD UPDATE DELETE SECTION OF QUESTION END
 	}
 ?>

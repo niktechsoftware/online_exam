@@ -8,35 +8,35 @@ if(isset($subjectList)):
 		<div class="text-white text-sm pull-left space10">
 			<div class="row">
 
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-12">
-						<span id="name2" Style="color:red;"></span>
-						<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-12">
-							<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
-							<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-12">
-						<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="row">
-						<div class="col-md-12">
-						<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
-						</div>
-					</div>
+				<div class="col-md-12">
+					<table class="table table-bordered table-hover">
+						<thead>
+							<th>Subject Name</th>
+							<th>Ques No</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</thead>
+						<tbody>
+							<td>
+								<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+							</td>
+							<td>
+								<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+							</td>
+							<td>
+								<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+							</td>
+							<td>
+								<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+							</td>
+						</tbody>
+						<!-- <tfoot>
+							<th>Subject Name</th>
+							<th>Ques No</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tfoot> -->
+					</table>
 				</div>
 			</div>
 		

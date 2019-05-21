@@ -202,17 +202,9 @@
                                     </div>
                                     <div class="panel-body">
                                       <div class="form-group">
-                                        <?php 
-                                     $view = $this->db->get("test_name")->result(); 
-                                     ?>
-                                        <select id="testListshow" class="form-control">
-                                          <option value="">Select Test</option>
-                                          <?php foreach($view as $row)
-                                        { ?>
-                                          <option value="<?php echo $row->id;?>"><?php echo $row->test_name;?></option>
-                                            <?php  }?>
+                                        <select id="testListshow" class="form-control" name="testListshow">
+                                          
                                         </select>
-                                    
                                       </div>
                                     </div>
                                   </div>
@@ -224,7 +216,7 @@
                       </div>
                   <!----exam and subject section end------->
                     <div class="row exam_panel">
-                   <div class="col-sm-6">
+                   <div class="col-sm-5">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title">Add Subject Name</h5>
@@ -268,7 +260,7 @@
                         </div>
                       </div>
                     </div>
-                     <div class="col-sm-6">
+                     <div class="col-sm-7">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title"> Subject List</h5>

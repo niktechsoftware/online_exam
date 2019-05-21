@@ -41,7 +41,7 @@
               <div class="panel-body">
                 <div class="form-group">
                   <?php $examShow = $this->db->get("exam_head")->result();?>
-                  <select id="streamListshow" class="form-control">
+                  <select id="examQuesList" class="form-control">
                     <option value="">Select Exam Head</option>
                     <?php foreach($examShow as $view){?>
                       <option value="<?php echo $view->id;?>"><?php echo $view->exam_head;?></option>
@@ -58,7 +58,7 @@
               </div>
               <div class="panel-body">
                 <div class="form-group">
-                  <select id="sectionshow" class="form-control">
+                  <select id="testQuesList" class="form-control" name="testQuesList">
 
                   </select>
                 </div>
@@ -72,7 +72,7 @@
               </div>
               <div class="panel-body">
                 <div class="form-group">
-                  <select id="classshow" class="form-control">
+                  <select id="subQuesList" class="form-control" name="subQuesList">
                   </select>
                 </div>
               </div>
@@ -84,14 +84,32 @@
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg-info border-light">
-                          <h5 class="panel-title">Add Question</h5>
+                          <h5 class="panel-title">Add /Upload Question</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Add Question</a><!--<br--><br><br>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-8">
+                                   <textarea type="text" id="addStream" onkeyup="myFunction()" placeholder="Enter Question" class="form-control"></textarea>
+                                </div>
+                                <div class="col-md-4">
+                                   <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                              Add Question</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="row">
+                                <div class="col-md-8">
+                                   <input type="file" name="fileUpload" >
+                                </div>
+                                <div class="col-md-4">
+                                   <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                              Add Question</a>
+                                </div>
+                              </div>
+                            </div>
                             <div class="alert alert-warning"> Type a Queastion  and press Add Question.If Question added
                               successfully then it show in right side panel where you can change the question and Delete it.
                             </div>

@@ -37,18 +37,21 @@
   $(document).ready(function() {
     // add exam code start
       $("#addExamButton").click(function(){
-        var examName = $('#addExam').val(); 
-        //alert(examName);
+        var examName = $('#addExam').val();
         alert("Your exam is successfully created");
         $.post("<?php echo base_url('examconfiguration/addExam') ?>", {examName : examName}, function(data){
                 $("#examAdd1").html(data);
-                //alert(data);
         });
         $('#addExam').val("");
         });
-      // End exam code
-
+      
+       var examName = $('#addExam').val();
+     $.post("<?php echo base_url('examconfiguration/addExam') ?>", {examName : examName}, function(data){
+                $("#examAdd1").html(data);
+        });
+ // End exam code
       // start add test code
+
       $("#addTestButton").click(function(){
          var testName = $('#addTest').val();
          var examHead = $('#examListshow').val();
@@ -64,12 +67,33 @@
          });
          $("#addTest").val("");
       });
+      /// side show valu in test section
+      var testName = $('#addTest').val();
+         var examHead = $('#examListshow').val();
+         var testDesc = $('#descTest').val();
+         var testMarks = $('#marksTest').val();
+         $.post("<?php echo base_url('examconfiguration/addTest')?>",{testName : testName,
+            examHead : examHead,
+            testDesc : testDesc,
+            testMarks : testMarks}, function(data){
+            $("#addTest1").html(data);
+           
+         });
+
       // end add test code
       // start add subject code
+       //js
+      $("#examListShow").change(function(){
+                    var testnm = $("#examListShow").val();
+                   // alert(testnm);
+                    $.post("addSubject2",{testnm : testnm}, function(data){
+                    $("#testListshow").html(data);
+                        });
+                });
+      //js end
          $("#addSubjectButton").click(function(){
         var subjectName = $('#addSubject').val(); 
          var examListshow = $('#examListShow').val();
-         alert(examListshow); 
           var testListshow = $('#testListshow').val();
           var questionNo = $('#addQuestion').val(); 
         alert("Your Subject is successfully created");
@@ -80,11 +104,35 @@
           questionNo : questionNo
         }, function(data){
                 $("#addSubject1").html(data);
-                //alert(data);
         });
 
         $('#addSubject').val("");
         });
+         //show code of subject in right side panel
+          var subjectName = $('#addSubject').val(); 
+         var examListshow = $('#examListShow').val();
+          var testListshow = $('#testListshow').val();
+          var questionNo = $('#addQuestion').val(); 
+        //alert("Your Subject is successfully created");
+        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", {
+          subjectName : subjectName,
+          examListshow : examListshow,
+          testListshow : testListshow,
+          questionNo : questionNo
+        }, function(data){
+                $("#addSubject1").html(data);
+        });
+        //js code
+        // $("#examListshow").change(function(){
+        //             var examnm = $("#examListshow").val();
+        //             alert(examnm);
+        //             $.post("addTest",{examnm: examnm}, function(data){
+        //             $("#examListshow").html(data);
+        //             //alert(data);
+        //                 });
+        //         });
+        //js code end
+
       // end add subject code
   });
 

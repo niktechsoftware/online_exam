@@ -36,8 +36,8 @@
         }
         .subject_btn{
             border-color: gray;
-            border-radius: 2rem;;
-            margin: 10px;
+            border-radius: 2rem;
+            
             background-color:#715cb8;
             color: white;
         }
