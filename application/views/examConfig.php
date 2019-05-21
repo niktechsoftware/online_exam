@@ -184,11 +184,9 @@
                                         <?php 
                                      $view=   $this->db->get("exam_head")->result(); 
                                      ?>
-                                        <select id="examListshow" class="form-control">
+                                        <select id="examListShow" class="form-control">
                                           <option value="">Select Exam Head</option>
-                                          <?php foreach($view as $row)
-
-                                        { 
+                                          <?php foreach($view as $row){ 
                                           ?>
                                           <option value="<?php echo $row->id;?>"><?php echo $row->exam_head;?></option>
                                             <?php  }?>
@@ -205,7 +203,7 @@
                                     <div class="panel-body">
                                       <div class="form-group">
                                         <?php 
-                                     $view=   $this->db->get("test_name")->result(); 
+                                     $view = $this->db->get("test_name")->result(); 
                                      ?>
                                         <select id="testListshow" class="form-control">
                                           <option value="">Select Test</option>
@@ -233,10 +231,37 @@
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addSubject" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addSubjectButton"><i class="ion-checkmark-round"></i>
-                              Add Subject</a><!--<br--><br><br>
+                            <div class="form-group">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <label>Subject Name</label>
+                              </div>
+                              <div class="col-md-8">
+                                <span id="name" style="color:red;"></span>
+                                 <input type="text" id="addSubject" onkeyup="myFunction()">
+                              </div>
+                            </div>
+                          </div>
+                            <div class="form-group">
+                             <div class="row">
+                              <div class="col-md-4">
+                                <label>Question No</label>
+                              </div>
+                              <div class="col-md-8">
+                                <span id="name" style="color:red;"></span>
+                                <input type="number" id="addQuestion" onkeyup="myFunction()">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="row">
+                              <div class="col-md-12">
+                                 <a href="#" class="btn btn-sm btn-round btn-primary" id="addSubjectButton"><i class="ion-checkmark-round"></i>
+                              Add Subject</a>
+                              </div>
+                            </div>
+                          </div>
+                            <!--<br--><!-- <br><br> -->
                             <div class="alert alert-warning"> Type a subject  and press Add Subject.If Subject added successfully then it show in right side panel where you can change the name and Delete it.
                             </div>
                           </div>

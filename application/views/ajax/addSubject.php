@@ -6,11 +6,40 @@ if(isset($subjectList)):
 		//print_r($row);
 ?>
 		<div class="text-white text-sm pull-left space10">
-			<span id="name2" Style="color:red;"></span>
-			<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
-			<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
-			<a href="#" class="btn btn-sm btn-light-green" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
-			<a href="#" class="btn btn-sm btn-light-green" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+			<div class="row">
+
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-12">
+						<span id="name2" Style="color:red;"></span>
+						<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-12">
+							<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+							<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-12">
+						<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-12">
+						<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		
 		</div>
 		
 <?php
@@ -23,10 +52,12 @@ endif;
 			    $("#edit<?php echo $j; ?>").click(function(){
 		    		var subjectId = $('#subjectId<?php echo $j; ?>').val();	
 		    		var subjectName = $('#subjectValue<?php echo $j; ?>').val();
+		    		var questionNo = $('#subjectQuestion<?php echo $j;?>').val();
 		    		alert("your Subject is successfully updated");
 		    		var form_data = {
 							subjectId : subjectId,
-							subjectName : subjectName
+							subjectName : subjectName,
+							questionNo : questionNo
 						};
 				$.ajax({
 					url: "<?php echo site_url("examconfiguration/updateSubject") ?>",

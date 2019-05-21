@@ -68,14 +68,16 @@
       // start add subject code
          $("#addSubjectButton").click(function(){
         var subjectName = $('#addSubject').val(); 
-         var examListshow = $('#examListshow').val();
-         //alert(examListshow); 
-          var testListshow = $('#testListshow').val(); 
+         var examListshow = $('#examListShow').val();
+         alert(examListshow); 
+          var testListshow = $('#testListshow').val();
+          var questionNo = $('#addQuestion').val(); 
         alert("Your Subject is successfully created");
         $.post("<?php echo base_url('examconfiguration/addSubject') ?>", {
           subjectName : subjectName,
           examListshow : examListshow,
           testListshow : testListshow,
+          questionNo : questionNo
         }, function(data){
                 $("#addSubject1").html(data);
                 //alert(data);
