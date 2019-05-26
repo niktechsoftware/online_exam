@@ -108,15 +108,15 @@
 				return $query;
 			}
 			public function updateSubject($subjectId,$subjectName,$questionNo){
-		$val = array(
+				$val = array(
 				"subject_name" => $subjectName,
 				"subject_ques_no" => $questionNo
 				//"school_code"=>$this->session->userdata("school_code"),
-		);
-		$this->db->where("id",$subjectId);
-		$query = $this->db->update("subject",$val);
-		return true;
-	}
+				);
+				$this->db->where("id",$subjectId);
+				$query = $this->db->update("subject",$val);
+				return true;
+		}
 	public function deleteSubject($subjectId){
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
 		  $subject=$this->db->get('subject')->result();
@@ -134,10 +134,48 @@
 
 
 		///ADD UPDATE DELETE SECTION OF QUESTION STart
+			public function addQuestion($question ,$subject_ID){
+		$db = array(
+			"question" => $question,
+			"subject_id" => $subject_ID
+				//"school_code"=>$this->session->userdata("school_code"),
+		);
+		if(strlen($question) > 1){
+			$this->db->insert("question",$db);
+		}
+		//$this->db->where("school_code",$this->session->userdata("school_code"));
+		$query = $this->db->get("question");
+		return $query;
+	}
 
-			public function addQues(){
+	public function addsQuestion(){
+		//$this->db->where("school_code",$this->session->userdata("school_code"));
+		$query = $this->db->get("question");
+		return $query;
+	}
 
-			}
+	public function updateQuestion($questionName,$questionId){
+				$val = array(
+				"question" => $questionName
+				//"school_code"=>$this->session->userdata("school_code"),
+				);
+				$this->db->where("id",$questionId);
+				$query = $this->db->update("question",$val);
+				return true;
+		}
+	public function deleteQuestion($questionId){
+		//$this->db->where("school_code",$this->session->userdata("school_code"));
+		  $question=$this->db->get('question')->result();
+		foreach ($question as $value) {
+		   	  if($value->question == $question){
+                echo "<script>alert('you can not delete this subject because this subject is already used in test');</script>";
+                return false;
+		   	  }
+		   }
+		   	  	$this->db->where("id",$questionId);
+		    $query = $this->db->delete("question");
+		    return $query;
+		}
 		///ADD UPDATE DELETE SECTION OF QUESTION END
 	}
 ?>

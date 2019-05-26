@@ -12,7 +12,6 @@
            <!-- Row start -->
            <div class="row m-b-30">
              <div class="col-lg-12 col-xl-12">
-
                <!-- Nav tabs -->
                <ul class="nav nav-tabs md-tabs" role="tablist">
                  <li class="nav-item">
@@ -30,7 +29,6 @@
                </ul>
                <!-- Tab panes -->
                <div class="tab-content card-block">
-
                  <div class="tab-pane active" id="quesadd" role="tabpanel">
                     <div class="row" >
           <div class="col-sm-4">
@@ -59,7 +57,6 @@
               <div class="panel-body">
                 <div class="form-group">
                   <select id="testQuesList" class="form-control" name="testQuesList">
-
                   </select>
                 </div>
               </div>
@@ -78,7 +75,6 @@
               </div>
             </div>
           </div>
-
         </div>
                  <div class="row" style="padding-top: 20px;">
                    <div class="col-sm-6">
@@ -91,10 +87,10 @@
                             <div class="form-group">
                               <div class="row">
                                 <div class="col-md-8">
-                                   <textarea type="text" id="addStream" onkeyup="myFunction()" placeholder="Enter Question" class="form-control"></textarea>
+                                   <textarea type="text" id="addQuestion" onkeyup="myFunction()" placeholder="Enter Question" class="form-control"></textarea>
                                 </div>
                                 <div class="col-md-4">
-                                   <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
+                                   <a href="#" class="btn btn-sm btn-round btn-primary" id="addQuestionButton"><i class="ion-checkmark-round"></i>
                               Add Question</a>
                                 </div>
                               </div>
@@ -117,20 +113,13 @@
                         </div>
                       </div>
                     </div>
-                     <div class="col-sm-6">
+                   <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
-                        <div class="panel-heading bg-info border-light">
-                          <h5 class="panel-title"> Exam List</h5>
+                        <div class="panel-heading bg_info border-light">
+                          <h5 class="panel-title">Question List</h5>
                         </div>
-                        <div class="panel-body">
-                          <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Edit</a><!--<br-->&nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Delete</a><br><br>
-                           
-                          </div>
+                        <div class="panel-body" id="questionAdd1">
+                        
                         </div>
                       </div>
                     </div>

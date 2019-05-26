@@ -46,12 +46,42 @@
                 });
     $("#testQuesList").change(function(){
                     var subnm = $("#testQuesList").val();
-                    alert(testnm);
+                   // alert(subnm);
                     $.post("addSubject3",{subnm : subnm}, function(data){
                     $("#subQuesList").html(data);
-                   // alert(data);
+                    //alert(data);
                         });
                 });
+             // start add Question code
+
+      $("#addQuestionButton").click(function(){
+         var questionName = $('#addQuestion').val();
+         var subject_id = $('#subQuesList').val();
+       // alert(questionName);
+        //alert(subject_id);
+         $.post("<?php echo base_url('examconfiguration/addQuestion')?>",{subject_id : subject_id
+            ,questionName : questionName
+            
+         }, function(data){
+            
+            $("#questionAdd1").html(data);
+            alert("Your quesiton succesfully add");
+         });
+         $("#questionAdd1").val("");
+      });
+      /// side show value in Question section
+      var questionName = $('#addQuestion').val();
+      var subject_id = $('#subQuesList').val();
+           $.post("<?php echo base_url('examconfiguration/addQuestion')?>",{subject_id : subject_id,
+            questionName : questionName
+            
+         }, function(data){
+            
+            $("#questionAdd1").html(data);
+           
+         });
+
+      // end add Question code
   });
 
   </script>

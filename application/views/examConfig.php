@@ -59,14 +59,7 @@
                           <h5 class="panel-title"> Exam List</h5>
                         </div>
                         <div class="panel-body" id="examAdd1">
-                         <!--  <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Edit</a><!--<br--><!-- &nbsp;&nbsp;<a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Delete</a><br><br>
-                           
-                          </div> --> 
+                        
                         </div>
                       </div>
                     </div>

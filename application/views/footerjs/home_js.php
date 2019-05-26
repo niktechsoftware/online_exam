@@ -113,7 +113,6 @@
          var examListshow = $('#examListShow').val();
           var testListshow = $('#testListshow').val();
           var questionNo = $('#addQuestion').val(); 
-        //alert("Your Subject is successfully created");
         $.post("<?php echo base_url('examconfiguration/addSubject') ?>", {
           subjectName : subjectName,
           examListshow : examListshow,

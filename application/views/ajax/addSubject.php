@@ -2,26 +2,29 @@
 $i = 1;
 if(isset($subjectList)):
 
-	foreach ($subjectList->result() as $row):
+	
 		//print_r($row);
 ?>
 		<div class="text-white text-sm pull-left space10">
 			<div class="row">
 
 				<div class="col-md-12">
-					<table class="table table-bordered table-hover">
+					<table class="table table-bordered table-hover" style="color: black;">
 						<thead>
 							<th>Subject Name</th>
 							<th>Ques No</th>
 							<th>Edit</th>
 							<th>Delete</th>
 						</thead>
+						<?php foreach ($subjectList->result() as $row):?>
 						<tbody>
 							<td>
 								<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
 								<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
 								<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
@@ -30,12 +33,15 @@ if(isset($subjectList)):
 								<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
 							</td>
 						</tbody>
-						<!-- <tfoot>
+						<?php 
+							$i++;
+							endforeach;?>
+						<tfoot style="color: black;">
 							<th>Subject Name</th>
 							<th>Ques No</th>
 							<th>Edit</th>
 							<th>Delete</th>
-						</tfoot> -->
+						</tfoot>
 					</table>
 				</div>
 			</div>
@@ -43,8 +49,7 @@ if(isset($subjectList)):
 		</div>
 		
 <?php
-	$i++;
-	endforeach;
+	
 endif;
 ?>
 <script>

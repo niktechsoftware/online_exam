@@ -155,7 +155,6 @@ class Examconfiguration extends CI_Controller{
 			$subjectList = $this->examConfigModel->addsSubject();
 		}
 		$data['subjectList'] = $subjectList;
-
 		$this->load->view("ajax/addSubject",$data);
 	}
 	public function updateSubject(){
@@ -166,7 +165,6 @@ class Examconfiguration extends CI_Controller{
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){
 			            $("#addSubject1").html(data);
-
 					});
 			</script>
 			<?php 
@@ -203,7 +201,7 @@ class Examconfiguration extends CI_Controller{
         	$sub = $this->input->post('subnm');
         	$this->db->where('test_name_id',$sub);
         	$var = $this->db->get("subject");
-        	if($var->num_row()>0){
+        	if($var){
         		echo '<option value="">-Select Test Name-</option>';
                 foreach ($var->result() as $row){
                     echo '<option value="'.$row->id.'">'.$row->subject_name.'</option>';
@@ -211,6 +209,43 @@ class Examconfiguration extends CI_Controller{
                 echo '<option value="all">All</option>';
         	}
         }
+
+       	public function addQuestion(){
+		$question=$this->input->post('questionName');
+		$subject_ID = $this->input->post('subject_id');
+		$this->load->model('examConfigModel');
+		if($question && $subject_ID){
+		$questionList = $this->examConfigModel->addQuestion($question,$subject_ID);
+			}else{
+				$questionList = $this->examConfigModel->addsQuestion();
+			}
+				$data['questionList'] = $questionList;
+				$this->load->view("ajax/addQuestion",$data);
+	}
+	public function updateQuestion(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->updateQuestion($this->input->post("questionId"),$this->input->post("questionName"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addQuestion') ?>", function(data){
+			            $("#addQuestion1").html(data);
+					});
+			</script>
+			<?php 
+		}
+	}
+	public function deleteQuestion(){
+		$this->load->model('examconfigmodel');
+		if($query = $this->examconfigmodel->deleteQuestion($this->input->post("questionId"))){
+			?>
+			<script>
+			        $.post("<?php echo base_url('examconfiguration/addQuestion') ?>", function(data){
+			            $("#addQuestion1").html(data);
+					});
+			</script>
+			<?php 
+		}
+	}
 	/// ADD UPDATE DELETE SECTION CODE END
 }
 ?>
