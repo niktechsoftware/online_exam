@@ -128,7 +128,6 @@
 		   	  }
 		   }
 		   	  	$this->db->where("id",$subjectId);
-		   	  	
 		    $query = $this->db->delete("subject");
 		    return $query;
 		}
@@ -156,7 +155,7 @@
 		return $query;
 	}
 
-	public function updateQuestion($questionName,$questionId){
+	public function updateQuestion($questionId,$questionName){
 				$val = array(
 				"question" => $questionName
 				//"school_code"=>$this->session->userdata("school_code"),

@@ -174,6 +174,7 @@ class Examconfiguration extends CI_Controller{
 		$this->load->model('examconfigmodel');
 	//	print_r($this->input->post("subjectId"));exit;
 		if($query = $this->examconfigmodel->deleteSubject($this->input->post("subjectId"))){
+			//print_r($query);exit;
 			?>
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addSubject') ?>", function(data){

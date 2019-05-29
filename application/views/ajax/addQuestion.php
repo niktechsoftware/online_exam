@@ -9,8 +9,8 @@ if(isset($questionList)):
 			<span id="name2" Style="color:red;"></span>
 			<input type="text" id="questionValue<?php echo $i;?>" size="13" value="<?php echo $row->question;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
 			<input type="hidden" id="questionId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
-			<a href="#" class="btn btn-sm btn-light-green" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
-			<a href="#" class="btn btn-sm btn-light-green" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+			<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+			<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
 		</div>
 		
 <?php

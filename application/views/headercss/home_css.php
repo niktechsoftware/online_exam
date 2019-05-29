@@ -41,6 +41,12 @@
             background-color:#715cb8;
             color: white;
         }
+       .txt_css{
+        color:#961111;
+            border-color: #e82d0f;
+            font-size: 12px;
+
+       }
         
     </style>
 </head>

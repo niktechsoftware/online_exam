@@ -65,7 +65,7 @@
          }, function(data){
             
             $("#questionAdd1").html(data);
-            alert("Your quesiton succesfully add");
+            alert("Your quesiton succesfully added");
          });
          $("#questionAdd1").val("");
       });

@@ -102,6 +102,12 @@ if(isset($testList)):
                          input.addEventListener("keyup", function () {
                           var x = document.getElementById("testValue<?php echo $j;?>");
                              x.value = x.value.toUpperCase();
+                           var d = document.getElementById("testDesc<?php echo $j;?>");
+                           	d.value = d.value.toUpperCase();  
                   });
+                         // input.addEventListener("keyup",function(){
+                         // 	var test = document.getElementById("addTest");
+                         // 	test.value = test.value.toUpperCase();
+                         // });
                     <?php } ?>   
 </script>

@@ -75,7 +75,7 @@ endif;
 		        });
 			    $("#delete<?php echo $j; ?>").click(function(){
 		    		var subjectId = $('#subjectId<?php echo $j; ?>').val();	
-		    		//alert(streamName);
+		    		//alert(subjectId);
 		    		$.post("<?php echo site_url('examconfiguration/deleteSubject') ?>", {subjectId : subjectId}, function(data){
 		                $("#addSubject1").html(data);
 		                //alert(data);
@@ -105,6 +105,8 @@ endif;
                          input.addEventListener("keyup", function () {
                           var x = document.getElementById("subjectValue<?php echo $j;?>");
                              x.value = x.value.toUpperCase();
+                       
+
                   });
                     <?php } ?>   
 </script>

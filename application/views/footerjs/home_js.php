@@ -63,7 +63,7 @@
             testMarks : testMarks}, function(data){
             
             $("#addTest1").html(data);
-            alert("Your test succesfully add");
+            alert("Your test succesfully added");
          });
          $("#addTest").val("");
       });

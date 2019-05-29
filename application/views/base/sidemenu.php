@@ -39,12 +39,12 @@
                                     
                                         <li class="">
                                             <a href="<?php echo base_url();?>examconfiguration/examConfigur">
-                                                <span class="pcoded-mtext">Exam Configur</span>
+                                                <span class="pcoded-mtext">Exam Configure</span>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a href="<?php echo base_url();?>examconfiguration/quesConfigur">
-                                                <span class="pcoded-mtext">Question Configur</span>
+                                                <span class="pcoded-mtext">Question Configure</span>
                                             </a>
                                         </li>
                                        
@@ -65,7 +65,7 @@
                                 </li>
                                 
                                 
-                                <li class="pcoded-hasmenu">
+                               <!--  <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
                                         <span class="pcoded-mtext">Products</span>
@@ -98,10 +98,10 @@
                                                 </li>
                                         
                                     </ul>
-                                </li>
+                                </li> -->
                                
                                 
-                                <li class="pcoded-hasmenu">
+                                <!-- <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
                                         <span class="pcoded-mtext" >Stock & Items</span>
@@ -124,14 +124,14 @@
                                             </a>
                                         </li> -->
 
-                                    </ul>
-                                </li>
+                                   <!--  </ul>
+                                </li>  -->
                             </ul>
                           
                             <!-- <div class="pcoded-navigatio-lavel">UI Element</div> -->
                            
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="pcoded-hasmenu">
+                               <!--  <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-box"></i></span>
                                         <span class="pcoded-mtext" >Subscriber</span>
@@ -184,11 +184,11 @@
                                         </li>
                                      
                                     </ul>
-                                </li>
+                                </li> -->
                              
                                
                 
-                                <li class="pcoded-hasmenu">
+                              <!--   <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-gitlab"></i></span>
                                         <span class="pcoded-mtext">Admin Approval System</span>
@@ -211,10 +211,10 @@
                                         </li>
                                  
                                     </ul>
-                                </li>
+                                </li> -->
                                
 
-                                <li class="pcoded-hasmenu">
+                                <!-- <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-package"></i></span>
                                         <span class="pcoded-mtext" >Account</span>
@@ -236,11 +236,11 @@
                                             </a>
                                         </li> -->
 
-                                    </ul>
-                                </li>
+                                    <!--</ul>
+                                </li> -->
                               
                                
-                                <li class=" ">
+                                <!-- <li class=" ">
                                     <a href="animation.html">
                                         <span class="pcoded-micon"><i class="feather icon-aperture rotate-refresh"></i><b>A</b></span>
                                         <span class="pcoded-mtext" >Rules And Regulation</span>
@@ -262,13 +262,13 @@
                                         <span class="pcoded-mtext" >Tree</span>
                                         <span class="pcoded-badge label label-danger">HOT</span>
                                     </a>
-                                </li>
-                                <li class=" ">
+                                </li> -->
+                               <!--  <li class=" ">
                                     <a href="<?php echo base_url();?>wallet">
                                         <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
                                         <span class="pcoded-mtext" >Wallet</span>
                                         <!-- <span class="pcoded-badge label label-danger">Wallet</span> -->
-                                    </a>
+                                   <!--  </a>
                                 </li>
                                
 
@@ -277,8 +277,8 @@
                                         <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
                                         <span class="pcoded-mtext" >SMS Setting</span>
                                         <!-- <span class="pcoded-badge label label-danger">SMS Setting</span> -->
-                                    </a>
-                                </li>
+                                    <!--</a>
+                                </li> -->
                                
                                 <!-- <li class="pcoded-hasmenu">
                                     <a href="<?php echo base_url();?>tree">
@@ -1313,8 +1313,8 @@
                                     </a>
                                 </li> -->
                                
-                        <div class="pcoded-navigatio-lavel">UI Element</div>
-                        <ul class="pcoded-item pcoded-left-item">
+                        <!-- <div class="pcoded-navigatio-lavel">UI Element</div> -->
+                       <!--  <ul class="pcoded-item pcoded-left-item">
                             <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-box"></i></span>
@@ -1578,7 +1578,7 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul>
+                        </ul> -->
 
 
                             </ul> 
