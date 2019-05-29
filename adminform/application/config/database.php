@@ -49,10 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'online_exam';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['username'] = 'schoodhe_online';
+$db['default']['password'] = 'Rahul!123singh';
+$db['default']['database'] = 'schoodhe_online_exam';
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

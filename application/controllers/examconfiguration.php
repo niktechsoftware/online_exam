@@ -140,7 +140,7 @@ class Examconfiguration extends CI_Controller{
                 foreach ($var->result() as $row){
                     echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
                 }
-                echo '<option value="all">All</option>';
+                // echo '<option value="all">All</option>';
             }
         }
 		public function addSubject(){
@@ -172,6 +172,7 @@ class Examconfiguration extends CI_Controller{
 	}
 	public function deleteSubject(){
 		$this->load->model('examconfigmodel');
+	//	print_r($this->input->post("subjectId"));exit;
 		if($query = $this->examconfigmodel->deleteSubject($this->input->post("subjectId"))){
 			?>
 			<script>
@@ -194,7 +195,7 @@ class Examconfiguration extends CI_Controller{
                 foreach ($var->result() as $row){
                     echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
                 }
-                echo '<option value="all">All</option>';
+                // echo '<option value="all">All</option>';
             }
         }
         public function addSubject3(){
@@ -206,7 +207,7 @@ class Examconfiguration extends CI_Controller{
                 foreach ($var->result() as $row){
                     echo '<option value="'.$row->id.'">'.$row->subject_name.'</option>';
                 }
-                echo '<option value="all">All</option>';
+                // echo '<option value="all">All</option>';
         	}
         }
 

@@ -4,12 +4,13 @@ if(isset($testList)):
 
 ?>
 	<div class="text-white text-sm pull-left space10">
-			<table class=" table-bordered table-hover">
-				<tr>
+			<table class=" table-bordered table-hover table">
+				<tr style="color:black;">
 					<th>Test Name </th>
 					<th>Test Descripton</th>
 					<th>Test Marks</th>
-					<th>Action</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			<?php
 				foreach ($testList->result() as $row):
@@ -21,13 +22,17 @@ if(isset($testList)):
 					</td>
 					<td>
 						<input type="text" id="testDesc<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
 						<input type="number" id="testMarks<?php echo $i;?>" size="13" value="<?php echo $row->test_marks;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
-						<a href="#" class="btn btn-sm btn-light-green" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
-						<a href="#" class="btn btn-sm btn-light-green" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+						<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+						</td>
+						<td>
+						<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
 					</td>
 				</tr>
 		<?php

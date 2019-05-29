@@ -27,10 +27,10 @@ if(isset($subjectList)):
 								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
-								<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
+								<a href="" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
 							</td>
 							<td>
-								<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+								<a href="" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
 							</td>
 						</tbody>
 						<?php 
@@ -69,7 +69,7 @@ endif;
 					type: 'POST',
 					data: form_data,
 					success: function(msg){
-						$("#streamList1").html(msg);
+						$("#addSubject1").html(msg);
 					}
 				});
 		        });

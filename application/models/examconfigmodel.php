@@ -118,6 +118,7 @@
 				return true;
 		}
 	public function deleteSubject($subjectId){
+	   
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
 		  $subject=$this->db->get('subject')->result();
 		foreach ($subject as $value) {
@@ -127,6 +128,7 @@
 		   	  }
 		   }
 		   	  	$this->db->where("id",$subjectId);
+		   	  	
 		    $query = $this->db->delete("subject");
 		    return $query;
 		}

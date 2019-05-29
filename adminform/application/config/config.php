@@ -22,7 +22,7 @@
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://online_exam/adminform/';
+$config['base_url'] = 'https://schoolerp-niktech.in/online_exam/adminform/';
 
 /*
 |--------------------------------------------------------------------------

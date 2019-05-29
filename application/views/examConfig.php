@@ -100,7 +100,7 @@
                         </div>
                       </div>
                     <div class="row exam_panel" >
-                   <div class="col-sm-6">
+                   <div class="col-sm-5">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
                           <h5 class="panel-title">Add Test Name</h5>
@@ -127,7 +127,7 @@
                               <div class="row">
                                 <div class="col-md-4">Test Marks</div>
                                 <div class="col-md-8">
-                                  <input type="text" id="marksTest" onkeyup="myFunction()">
+                                  <input type="number" id="marksTest" onkeyup="myFunction()">
                                 </div>
                               </div>
                             </div>
@@ -146,7 +146,7 @@
                         </div>
                       </div>
                     </div>
-                     <div class="col-sm-6">
+                     <div class="col-sm-7">
                       
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg_info border-light">
