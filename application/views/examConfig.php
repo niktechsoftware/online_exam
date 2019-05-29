@@ -84,7 +84,7 @@
                                 <?php 
                                    $view=  $this->db->get("exam_head")->result(); 
                                    ?>
-                                   <select id="examListshow" class="form-control">
+                                   <select id="examListshow" class="form-control" required="">
                                       <option value="">Select Exam Head</option>
                                         <?php foreach($view as $row)
                                         { ?>
@@ -173,7 +173,7 @@
                                  <?php 
                                    $view=  $this->db->get("exam_head")->result(); 
                                   ?>
-                                   <select id="examListShow" class="form-control">
+                                   <select id="examListShow" class="form-control" required="">
                                       <option value="">Select Exam Head</option>
                                         <?php foreach($view as $row){ 
                                         ?>
@@ -191,7 +191,7 @@
                             </div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <select  id="testListshow" class="form-control" name="testListshow">
+                                <select  id="testListshow" class="form-control" name="testListshow" required="">
 
                                 </select>
                               </div>

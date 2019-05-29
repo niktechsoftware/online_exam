@@ -1,9 +1,6 @@
 <?php
 $i = 1;
 if(isset($subjectList)):
-
-	
-		//print_r($row);
 ?>
 		<div class="text-white text-sm pull-left space10">
 			<div class="row">
@@ -19,11 +16,11 @@ if(isset($subjectList)):
 						<?php foreach ($subjectList->result() as $row):?>
 						<tbody>
 							<td>
-								<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+								<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>"   onkeyup="myFunction()" >
 								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
-								<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+								<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" >
 								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>

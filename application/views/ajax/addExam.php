@@ -1,9 +1,6 @@
 <?php
 $i = 1;
 if(isset($examList)):
-
-
-		//print_r($row);
 ?>
 		<div class="text-white text-sm pull-left space10 ">
 		    <table class="table table-borered table-striped">
@@ -17,31 +14,24 @@ if(isset($examList)):
 		       ?>
 		         <tr>
 		             <td>
-        			<span id="name2" Style="color:red;"></span>
-        			
-        			<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->exam_head;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+        			<input type="text" id="examValue<?php echo $i;?>" size="13" value="<?php echo $row->exam_head;?>" >
         			<input type="hidden" id="examId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
         			</td>
         			<td>
         			    <a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
         			</td>
         			<td>
-        			    	<a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
+        			    <a href="#" class="btn btn-sm subject_btn" id="delete<?php echo $i;?>"><i class="fa fa-trash-o"></i> Delete</a>
         			</td>
-        		
 			</tr>
 			<?php 	$i++;
 	                endforeach;
 	                ?>
 			</table>
 		</div>
-		
 <?php
-
 endif;
 ?>
-
-
 <script>
 	    <?php for($j = 1; $j < $i; $j++){ ?>
 			    $("#edit<?php echo $j; ?>").click(function(){
@@ -57,7 +47,7 @@ endif;
 					type: 'POST',
 					data: form_data,
 					success: function(msg){
-						$("#streamList1").html(msg);
+						$("#examAdd1").html(msg);
 					}
 				});
 		        });
@@ -66,13 +56,10 @@ endif;
 		    		var examId = $('#examId<?php echo $j; ?>').val();	
 		    		//alert(streamName);
 		    		$.post("<?php echo site_url('examconfiguration/deleteExam') ?>", {examId : examId}, function(data){
-		                $("#streamList1").html(data);
+		                $("#examAdd1").html(data);
 		                //alert(data);
 		    		})
 		        });
-	 
-                       
-
 	                  var input = document.getElementById("examValue<?php echo $j;?>");
                          input.addEventListener("keyup", function () {
                          var text_value = document.getElementById("examValue<?php echo $j;?>").value;

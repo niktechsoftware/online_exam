@@ -17,15 +17,15 @@ if(isset($testList)):
 			?>
 				<tr>
 					<td>
-						<input type="text" id="testValue<?php echo $i;?>" size="13" value="<?php echo $row->test_name;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="text" id="testValue<?php echo $i;?>" size="13" value="<?php echo $row->test_name;?>"   >
 						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
-						<input type="text" id="testDesc<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="text" id="testDesc<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>"   >
 						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
-						<input type="number" id="testMarks<?php echo $i;?>" size="13" value="<?php echo $row->test_marks;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="number" id="testMarks<?php echo $i;?>" size="13" value="<?php echo $row->test_marks;?>"  onkeyup="myFunction()" >
 						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
@@ -50,11 +50,9 @@ if(isset($testList)):
 			    $("#edit<?php echo $j; ?>").click(function(){
 		    		var testId = $('#testId<?php echo $j; ?>').val();	
 		    		var testName = $('#testValue<?php echo $j; ?>').val();
-
 		    		var testDescription = $('#testDesc<?php echo $j; ?>').val();
 		    		var testMarks = $('#testMarks<?php echo $j; ?>').val();
 		    		alert("your test is successfully updated");
-		    		
 		    		var form_data = {
 							testId : testId,
 							testName : testName,
@@ -66,7 +64,7 @@ if(isset($testList)):
 					type: 'POST',
 					data: form_data,
 					success: function(msg){
-						$("#streamList1").html(msg);
+						$("#addTest1").html(msg);
 					}
 
 				});
@@ -102,8 +100,8 @@ if(isset($testList)):
                          input.addEventListener("keyup", function () {
                           var x = document.getElementById("testValue<?php echo $j;?>");
                              x.value = x.value.toUpperCase();
-                           var d = document.getElementById("testDesc<?php echo $j;?>");
-                           	d.value = d.value.toUpperCase();  
+                           // var d = document.getElementById("testDesc<?php echo $j;?>");
+                           // 	d.value = d.value.toUpperCase();  
                   });
                          // input.addEventListener("keyup",function(){
                          // 	var test = document.getElementById("addTest");
