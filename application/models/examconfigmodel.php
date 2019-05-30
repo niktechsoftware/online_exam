@@ -164,6 +164,7 @@
 				$query = $this->db->update("question",$val);
 				return true;
 		}
+		
 	public function deleteQuestion($questionId){
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
 		  $question=$this->db->get('question')->result();

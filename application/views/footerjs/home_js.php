@@ -85,7 +85,6 @@
        //js
       $("#examListShow").change(function(){
                     var testnm = $("#examListShow").val();
-                   // alert(testnm);
                     $.post("addSubject2",{testnm : testnm}, function(data){
                     $("#testListshow").html(data);
                         });

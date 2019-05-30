@@ -87,7 +87,7 @@
                             <div class="form-group">
                               <div class="row">
                                 <div class="col-md-8">
-                                   <textarea type="text" id="addQuestion" onkeyup="myFunction()" placeholder="Enter Question" class="form-control"></textarea>
+                                   <textarea type="text" id="addQuestion" onkeyup="this.value = this.value.toUpperCase();" placeholder="Enter Question" class="form-control"></textarea>
                                 </div>
                                 <div class="col-md-4">
                                    <a href="#" class="btn btn-sm btn-round btn-primary" id="addQuestionButton"><i class="ion-checkmark-round"></i>
@@ -137,8 +137,11 @@
                             </div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <select id="streamListshow" class="form-control">
-                                  <option value="">Select Exam Head</option>
+                                <select id="examOptList" class="form-control">
+                                  <option>-Select Exam-</option>
+                                 <?php foreach($examShow as $view){?>
+                               <option value="<?php echo $view->id;?>"><?php echo $view->exam_head;?></option>
+                                <?php } ?>
                                 </select>
                               </div>
                             </div>
@@ -151,7 +154,7 @@
                             </div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <select id="sectionshow" class="form-control">
+                                <select id="testListOpt" class="form-control">
 
                                 </select>
                               </div>
@@ -165,7 +168,7 @@
                             </div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <select id="classshow" class="form-control">
+                                <select id="subjectListOpt" class="form-control">
                                 </select>
                               </div>
                             </div>
@@ -178,7 +181,7 @@
                             </div>
                             <div class="panel-body">
                               <div class="form-group">
-                                <select id="classshow" class="form-control">
+                                <select id="quesListopt" class="form-control">
                                 </select>
                               </div>
                             </div>
@@ -191,14 +194,14 @@
                    <div class="col-sm-6">
                       <div class="panel panel-calendar  exam_panel_body">
                         <div class="panel-heading bg-info border-light">
-                          <h5 class="panel-title">Add Test Name</h5>
+                          <h5 class="panel-title">Add Option Number</h5>
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
                             <span id="name" style="color:red;"></span>
-                            <input type="text" id="addStream" onkeyup="myFunction()">
-                            <a href="#" class="btn btn-sm btn-round btn-primary" id="addStreamButton"><i class="ion-checkmark-round"></i>
-                              Add Test Name</a><!--<br--><br><br>
+                            <input type="number" id="addOption" >
+                            <a href="" class="btn btn-sm btn-round btn-primary" id="addOptionButton"><i class="ion-checkmark-round"></i>
+                              Add Option No</a><!--<br--><br><br>
                             <div class="alert alert-warning"> Type a Test name and press Add Test Name.If Test Name added
                               successfully then it show in right side panel where you can change the name and Delete it.
                             </div>

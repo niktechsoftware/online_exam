@@ -35,53 +35,70 @@
 <script >
     
   $(document).ready(function() {
-    // js code of select box
+    // js code of select box for select box
     $("#examQuesList").change(function(){
                     var examnm = $("#examQuesList").val();
-                    //alert(examnm);
                     $.post("addTest2",{examnm : examnm}, function(data){
                     $("#testQuesList").html(data);
-                   // alert(data);
                         });
                 });
     $("#testQuesList").change(function(){
                     var subnm = $("#testQuesList").val();
-                   // alert(subnm);
                     $.post("addSubject3",{subnm : subnm}, function(data){
                     $("#subQuesList").html(data);
-                    //alert(data);
                         });
                 });
+    //end select code
              // start add Question code
 
       $("#addQuestionButton").click(function(){
          var questionName = $('#addQuestion').val();
          var subject_id = $('#subQuesList').val();
-       // alert(questionName);
-        //alert(subject_id);
+            alert("Your Quesiton Succesfully Added");
          $.post("<?php echo base_url('examconfiguration/addQuestion')?>",{subject_id : subject_id
-            ,questionName : questionName
-            
-         }, function(data){
-            
-            $("#questionAdd1").html(data);
-            alert("Your quesiton succesfully added");
+            ,questionName : questionName}, function(data)
+            { $("#questionAdd1").html(data);
          });
-         $("#questionAdd1").val("");
+         $("#addQuestion").val("");
       });
       /// side show value in Question section
       var questionName = $('#addQuestion').val();
       var subject_id = $('#subQuesList').val();
            $.post("<?php echo base_url('examconfiguration/addQuestion')?>",{subject_id : subject_id,
             questionName : questionName
-            
          }, function(data){
-            
             $("#questionAdd1").html(data);
-           
          });
 
       // end add Question code
+
+      //code of option start
+        //select box code start
+           $("#examOptList").change(function(){
+                    var examnmOpt = $("#examOptList").val();
+                    $.post("addTestOpt",{examnmOpt : examnmOpt}, function(data){
+                    $("#testListOpt").html(data);
+                        });
+                });
+           $("#testListOpt").change(function(){
+                    var testnmOpt = $("#testListOpt").val();
+                    alert(testnmOpt);
+                    $.post("addSubjectOpt",{testnmOpt : testnmOpt}, function(data){
+                    $("#subjectListOpt").html(data);
+                    alert(data);
+                        });
+                });
+           $("#subjectListOpt").change(function(){
+            var subjectnmOpt = $("#subjectListOpt").val();
+            alert(subjectnmOpt);
+            $.post("addQuesOpt",{subjectnmOpt : subjectnmOpt},function(data){
+              $("#quesListopt").html(data);
+              alert(data);
+            })
+
+           })
+        //select box code end
+      //code of option end
   });
 
   </script>

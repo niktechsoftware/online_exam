@@ -67,12 +67,7 @@ class Examconfiguration extends CI_Controller{
 	// add update delete exam code end
 	// add update delete test code start
 	public function addTest(){
-		//$examnm = $this->input->post('examnm');
-		//$quer = $this->db->where('exam_head_id',$examnm);
-		//$query = $this->db->get("test_name");
-		//print_r($query);exit();
-
-		//if($quer->num_rows()>0)
+		
 		$test = $this->input->post('testName');
 		$exam_head = $this ->input->post('examHead');
 		$testDesc = $this ->input->post('testDesc');
@@ -86,21 +81,8 @@ class Examconfiguration extends CI_Controller{
 		$data['testList'] = $testList;
 		$this->load->view("ajax/addTest",$data);
 	}
-	// function addTest2(){
- //    //$this->db->where("school_code",$this->session->userdata("school_code"));
-	// 	$em = $this->input->post('examnm');
-	// 	$this->db->where('exam_head_id',$em);
- //        $var = $this->db->get("test_name");
- //            if($var->num_rows() > 0){
- //                echo '<option value="">-Select Test Name-</option>';
- //                foreach ($var->result() as $row){
- //                    echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
- //                }
- //                echo '<option value="all">All</option>';
- //            }
- //        }
+	
 	public function updateTest(){
-
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->updateTest($this->input->post("testId"),
 			$this->input->post("testName"),
@@ -236,6 +218,7 @@ class Examconfiguration extends CI_Controller{
 			<?php 
 		}
 	}
+
 	public function deleteQuestion(){
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->deleteQuestion($this->input->post("questionId"))){
@@ -249,5 +232,43 @@ class Examconfiguration extends CI_Controller{
 		}
 	}
 	/// ADD UPDATE DELETE SECTION CODE END
+
+	///ADD UPDATE DELETE SECTION CODE START
+	///SELECT BOX CODE START
+	 public function addTestOpt(){
+        	$exam = $this->input->post('examnmOpt');
+        	$this->db->where('exam_head_id',$exam);
+        	$var = $this->db->get("test_name");
+        	if($var){
+        		echo '<option value="">-Select Test Name-</option>';
+                foreach ($var->result() as $row){
+                    echo '<option value="'.$row->id.'">'.$row->test_name.'</option>';
+                }
+        	}
+        }
+        public function addSubjectOpt(){
+        	$test = $this->input->post('testnmOpt');
+        	$this->db->where('test_name_id',$test);
+        	$var = $this->db->get('subject');
+        	if($var){
+        		echo '<option value="">-Select Subject Name-</option>';
+        		foreach($var->result() as $row){
+        			echo '<option value="'.$row->id.'">'.$row->subject_name.'</option>';
+        		}
+        	}
+
+        }
+        public function addQuesOpt(){
+        	$sub = $this->input->post('subjectnmOpt');
+        	$this->db->where('subject_id',$sub);
+        	$var = $this->db->get('question');
+        	if($var){
+        		echo '<option value="">-Select Question-</option>';
+        		foreach($var->result() as $row){
+        			echo '<option value="'.$row->id.'">'.$row->question.'</option>';
+        		}
+        	}
+        }
+	///SELECT BOX CODE END 
 }
 ?>
