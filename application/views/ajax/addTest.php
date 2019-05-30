@@ -21,7 +21,7 @@ if(isset($testList)):
 						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
-						<input type="text" id="testDesc<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>" onkeyup="Validate1()"  onkeyup="myFunction()" >
+						<input type="text" id="testDesc<?php echo $i;?>" size="13" value="<?php echo $row->test_description;?>"  onkeyup="this.value = this.value.toUpperCase();" >
 						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
@@ -102,8 +102,8 @@ if(isset($testList)):
                          input.addEventListener("keyup", function () {
                           var x = document.getElementById("testValue<?php echo $j;?>");
                              x.value = x.value.toUpperCase();
-                           var d = document.getElementById("testDesc<?php echo $j;?>");
-                           	d.value = d.value.toUpperCase();  
+                           // var d = document.getElementById("testDesc<?php echo $j;?>");
+                           // 	d.value = d.value.toUpperCase();  
                   });
                          // input.addEventListener("keyup",function(){
                          // 	var test = document.getElementById("addTest");
