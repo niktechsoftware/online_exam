@@ -4,7 +4,6 @@ if(isset($subjectList)):
 ?>
 		<div class="text-white text-sm pull-left space10">
 			<div class="row">
-
 				<div class="col-md-12">
 					<table class="table table-bordered table-hover" style="color: black;">
 						<thead>
@@ -16,12 +15,12 @@ if(isset($subjectList)):
 						<?php foreach ($subjectList->result() as $row):?>
 						<tbody>
 							<td>
-								<input type="text" id="subjectValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>"   onkeyup="myFunction()" >
-								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
+								<input type="text" id="subValue<?php echo $i;?>" size="13" value="<?php echo $row->subject_name;?>">
+								<input type="hidden" id="subjId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
 								<input type="text" id="subjectQuestion<?php echo $i;?>" size="13" value="<?php echo $row->subject_ques_no;?>" >
-								<input type="hidden" id="subjectId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
+								<input type="hidden" id="subjId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 							</td>
 							<td>
 								<a href="" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
@@ -33,74 +32,68 @@ if(isset($subjectList)):
 						<?php 
 							$i++;
 							endforeach;?>
-						<tfoot style="color: black;">
-							<th>Subject Name</th>
-							<th>Ques No</th>
-							<th>Edit</th>
-							<th>Delete</th>
-						</tfoot>
 					</table>
 				</div>
 			</div>
-		
 		</div>
-		
 <?php
-	
 endif;
 ?>
 <script>
-	    <?php for($j = 1; $j < $i; $j++){ ?>
+	    <?php  for($j = 1; $j < $i; $j++){?>
 			    $("#edit<?php echo $j; ?>").click(function(){
-		    		var subjectId = $('#subjectId<?php echo $j; ?>').val();	
-		    		var subjectName = $('#subjectValue<?php echo $j; ?>').val();
-		    		var questionNo = $('#subjectQuestion<?php echo $j;?>').val();
-		    		alert("your Subject is successfully updated");
-		    		var form_data = {
-							subjectId : subjectId,
-							subjectName : subjectName,
-							questionNo : questionNo
-						};
-				$.ajax({
-					url: "<?php echo site_url("examconfiguration/updateSubject") ?>",
-					type: 'POST',
-					data: form_data,
-					success: function(msg){
-						$("#addSubject1").html(msg);
-					}
-				});
+			    	var subId = $('#subjId<?php echo $j;?>').val();
+		    		var subName = $('#subValue<?php echo $j;?>').val();
+		     		var questionNo = $('#subjectQuestion<?php echo $j;?>').val();
+		  			alert(subId);
+		  			alert(subName);
+		  			alert(questionNo);
+		  	 		alert("your Subject is successfully updated");
+		     		var form_data = {
+				 			subId : subId,
+				 			subName : subName,
+				 			questionNo : questionNo
+				 		};
+				 $.ajax({
+				 	url: "<?php echo site_url("examconfiguration/updateSubject") ?>",
+				 	type: 'POST',
+				 	data: form_data,
+				 	success: function(msg){
+				 		$("#addSubject1").html(msg);
+				 	}
+				 });
 		        });
 			    $("#delete<?php echo $j; ?>").click(function(){
-		    		var subjectId = $('#subjectId<?php echo $j; ?>').val();	
+		    		var subId = $('#subjId<?php echo $j; ?>').val();
+		    		alert(subId);	
 		    		//alert(subjectId);
-		    		$.post("<?php echo site_url('examconfiguration/deleteSubject') ?>", {subjectId : subjectId}, function(data){
+		    		$.post("<?php echo site_url('examconfiguration/deleteSubject') ?>", {subId : subId}, function(data){
 		                $("#addSubject1").html(data);
 		                //alert(data);
 		    		})
 		        });
-	                  var input = document.getElementById("subjectValue<?php echo $j;?>");
+	                 var input = document.getElementById("subValue<?php echo $j;?>");
                          input.addEventListener("keyup", function () {
-                         var text_value = document.getElementById("subjectValue<?php echo $j;?>").value;
+                         var text_value = document.getElementById("subValue<?php echo $j;?>").value;
                                     if (!text_value.match(/^[A-Za-z]+$/)) {
                                         document.getElementById("name2").innerHTML = "Only Alphabets Allow";
                                          $('#edit<?php echo $j;?>').attr('disabled', 'disabled');
-
                                            $(document).on('click', 'a', function(e) {
                                           if ($(this).attr('disabled') == 'disabled') {
                                              e.preventDefault();
                                                 }
                                                 window.location.reload();
                                             });
-                                        document.getElementById("subjectValue<?php echo $j;?>").focus();
+                                        document.getElementById("subValue<?php echo $j;?>").focus();
                                         if (text_value == "") {
                                             document.getElementById("name2").innerHTML = " ";
                                              window.location.reload();
-                                            document.getElementById("subjectValue<?php echo $j;?>").focus();
+                                            document.getElementById("subValue<?php echo $j;?>").focus();
                                         }
                                     }
                          });
                          input.addEventListener("keyup", function () {
-                          var x = document.getElementById("subjectValue<?php echo $j;?>");
+                          var x = document.getElementById("subValue<?php echo $j;?>");
                              x.value = x.value.toUpperCase();
                        
 

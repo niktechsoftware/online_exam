@@ -28,7 +28,7 @@ if(isset($testList)):
 					</td>
 					<td>
 						<input type="number" id="testMarks<?php echo $i;?>" size="13" value="<?php echo $row->test_marks;?>"  onkeyup="myFunction()" >
-						<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
+<input type="hidden" id="testId<?php echo $i;?>" size="13" value="<?php echo $row->id; ?>">
 					</td>
 					<td>
 						<a href="#" class="btn btn-sm subject_btn" id="edit<?php echo $i;?>"><i class="fa fa-edit"></i> Edit</a>
@@ -51,15 +51,20 @@ if(isset($testList)):
 	    <?php for($j = 1; $j < $i; $j++){ ?>
 			    $("#edit<?php echo $j; ?>").click(function(){
 		    		var testId = $('#testId<?php echo $j; ?>').val();	
-		    		var testName = $('#testValue<?php echo $j; ?>').val();
-		    		var testDescription = $('#testDesc<?php echo $j; ?>').val();
-		    		var testMarks = $('#testMarks<?php echo $j; ?>').val();
-		    		alert("your test is successfully updated");
-		    		var form_data = {
+		     		var testName = $('#testValue<?php echo $j;?>').val();
+		     		var testDesc = $('#testDesc<?php echo $j;?>').val();
+		     		var testMark = $('#testMarks<?php echo $j;?>').val();
+		     		alert(testId);
+		     		alert(testName);
+		     		alert(testDesc);
+		     		alert(testMark);
+
+		     		alert("your test is successfully updated");
+		     		var form_data = {
 							testId : testId,
 							testName : testName,
-							testDescription : testDescription,
-							testMarks : testMarks
+							testDesc : testDesc,
+							testMark : testMar
 						};
 				$.ajax({
 					url: "<?php echo site_url("examconfiguration/updateTest") ?>",
@@ -73,7 +78,7 @@ if(isset($testList)):
 		        });
 			    $("#delete<?php echo $j; ?>").click(function(){
 		    		var testId = $('#testId<?php echo $j; ?>').val();	
-		    		//alert(streamName);
+		    		//alert(testId);
 		    		$.post("<?php echo site_url('examconfiguration/deleteTest') ?>", {testId : testId}, function(data){
 		                $("#addTest1").html(data);
 		                //alert(data);

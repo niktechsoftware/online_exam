@@ -198,10 +198,21 @@
                         </div>
                         <div class="panel-body">
                           <div class="text-black text-large exam_panel">
-                            <span id="name" style="color:red;"></span>
-                            <input type="number" id="addOption" >
-                            <a href="" class="btn btn-sm btn-round btn-primary" id="addOptionButton"><i class="ion-checkmark-round"></i>
-                              Add Option No</a><!--<br--><br><br>
+                           <div class="form-group">
+                             <div class="row">
+                              <div class="col-sm-6">
+                                <h6>Number of option</h6>
+                              </div>
+                               <div class="col-sm-6">
+                                 <select class="form-control" id="nop" name="nop" >
+                                    <option value="-nop-">-NOP-</option>
+                                    <option value="5">4</option>
+                                    <option value="6">5</option>
+                                   
+                                  </select>
+                               </div>
+                             </div>
+                           </div>
                             <div class="alert alert-warning"> Type a Test name and press Add Test Name.If Test Name added
                               successfully then it show in right side panel where you can change the name and Delete it.
                             </div>

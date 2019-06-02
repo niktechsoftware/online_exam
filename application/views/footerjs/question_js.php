@@ -98,6 +98,13 @@
 
            })
         //select box code end
+                $("#nop").change(function(){
+          var nop = $("#nop").val();
+          //alert(nop);
+           $.post("<?php echo site_url('quesConfigController/updateOption') ?>", {nop : nop},function(data){
+                    $("#sectionList").html(data);
+          }); 
+        });
       //code of option end
   });
 

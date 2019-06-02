@@ -86,8 +86,8 @@ class Examconfiguration extends CI_Controller{
 		$this->load->model('examconfigmodel');
 		if($query = $this->examconfigmodel->updateTest($this->input->post("testId"),
 			$this->input->post("testName"),
-			$this->input->post("testDescription"),
-			$this->input->post("testMarks"))){
+			$this->input->post("testDesc"),
+			$this->input->post("testMar"))){
 			?>
 			<script>
 			        $.post("<?php echo base_url('examconfiguration/addTest') ?>", function(data){
@@ -141,7 +141,7 @@ class Examconfiguration extends CI_Controller{
 	}
 	public function updateSubject(){
 		$this->load->model('examconfigmodel');
-		if($query = $this->examconfigmodel->updateSubject($this->input->post("subjectId"),$this->input->post("subjectName"),$this->input->post("questionNo"))){
+		if($query = $this->examconfigmodel->updateSubject($this->input->post("subId"),$this->input->post("subName"),$this->input->post("questionNo"))){
 			// print_r($query);exit;
 			?>
 			<script>
@@ -155,7 +155,7 @@ class Examconfiguration extends CI_Controller{
 	public function deleteSubject(){
 		$this->load->model('examconfigmodel');
 	//	print_r($this->input->post("subjectId"));exit;
-		if($query = $this->examconfigmodel->deleteSubject($this->input->post("subjectId"))){
+		if($query = $this->examconfigmodel->deleteSubject($this->input->post("subId"))){
 			//print_r($query);exit;
 			?>
 			<script>

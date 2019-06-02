@@ -37,6 +37,7 @@ endif;
 			    $("#edit<?php echo $j; ?>").click(function(){
 		    		var examId = $('#examId<?php echo $j; ?>').val();	
 		    		var examName = $('#examValue<?php echo $j; ?>').val();
+		    		alert(examId);
 		    		alert("your exam is successfully updated");
 		    		var form_data = {
 							examId : examId,

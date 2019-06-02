@@ -64,11 +64,11 @@
 			$query = $this->db->get("test_name");
 			return $query;
 		}
-		public function updateTest($testId,$testName,$testDescription,$testMarks){
+		public function updateTest($testId,$testName,$testDesc,$testMar){
 		$val = array(
 				"test_name" => $testName,
-				"test_description" => $testDescription,
-				"test_marks" => $testMarks
+				"test_description" => $testDesc,
+				"test_marks" => $testMar
 				//"school_code"=>$this->session->userdata("school_code"),
 		);
 		$this->db->where("id",$testId);
@@ -107,27 +107,27 @@
 				$query = $this->db->get("subject");
 				return $query;
 			}
-			public function updateSubject($subjectId,$subjectName,$questionNo){
+			public function updateSubject($subId,$subName,$questionNo){
 				$val = array(
-				"subject_name" => $subjectName,
+				"subject_name" => $subName,
 				"subject_ques_no" => $questionNo
 				//"school_code"=>$this->session->userdata("school_code"),
 				);
-				$this->db->where("id",$subjectId);
+				$this->db->where("id",$subId);
 				$query = $this->db->update("subject",$val);
 				return true;
 		}
-	public function deleteSubject($subjectId){
+	public function deleteSubject($subId){
 	   
 		//$this->db->where("school_code",$this->session->userdata("school_code"));
 		  $subject=$this->db->get('subject')->result();
 		foreach ($subject as $value) {
-		   	  if($value->subject_name==$subjectId){
+		   	  if($value->subject_name==$subId){
                 echo "<script>alert('you can not delete this subject because this subject is already used in test');</script>";
                 return false;
 		   	  }
 		   }
-		   	  	$this->db->where("id",$subjectId);
+		   	  	$this->db->where("id",$subId);
 		    $query = $this->db->delete("subject");
 		    return $query;
 		}

@@ -47,215 +47,11 @@
                                                 <span class="pcoded-mtext">Question Configure</span>
                                             </a>
                                         </li>
-                                       
-                                      
-                                       <!--  <li class=" ">
-                                            <a href="<?php echo base_url();?>branch/subbranch">
-                                                <span class="pcoded-mtext">Shop Registration</span>
-                                                <!-- <span class="pcoded-badge label label-info ">NEW</span> -->
-                                           <!--  </a>
-                                        </li> -->
-                                       <!--  <li class=" ">
-                                            <a href="<?php echo base_url();?>branch/shop_list">
-                                                <span class="pcoded-mtext">Shop List</span>
-                                                <!-- <span class="pcoded-badge label label-info ">NEW</span> -->
-                                           <!--  </a>
-                                        </li> -->
                                     </ul>
                                 </li>
-                                
-                                
-                               <!--  <li class="pcoded-hasmenu">
-                                    <a href="#">
-                                        <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
-                                        <span class="pcoded-mtext">Products</span>
-                                        <span class="pcoded-badge label label-warning">NEW</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                   
-                                   
-                                        <li class=" pcoded-hasmenu">
-                                            <a href="<?php echo base_url();?>product/definecatagory">
-                                                <span class="pcoded-mtext">Define Category</span>
-                                            </a>
-                                            </li>
-                                                <li class=" ">
-                                                    <a href="<?php echo base_url();?>product/addproduct">
-                                                        <span class="pcoded-mtext" >Add Product</span>
-                                                    </a>
-                                                </li>
-                                               
-                                               
-                                                <li class=" ">
-                                                    <a href="<?php echo base_url();?>welcome/product_list">
-                                                        <span class="pcoded-mtext" >Products List</span>
-                                                    </a>
-                                                </li>
-                                                <li class=" ">
-                                                    <a href="<?php echo base_url();?>product/p_wallet">
-                                                        <span class="pcoded-mtext" >Product  Wallet</span>
-                                                    </a>
-                                                </li>
-                                        
-                                    </ul>
-                                </li> -->
-                               
-                                
-                                <!-- <li class="pcoded-hasmenu">
-                                    <a href="#">
-                                        <span class="pcoded-micon"><i class="feather icon-layers"></i></span>
-                                        <span class="pcoded-mtext" >Stock & Items</span>
-                                        <span class="pcoded-badge label label-danger">100+</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/product_list">
-                                                <span class="pcoded-mtext" >Products List</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/enterstock">
-                                                <span class="pcoded-mtext" >Enter Stock</span>
-                                            </a>
-                                        </li>
-                                        <!-- <li class=" ">
-                                            <a href="widget-chart.html">
-                                                <span class="pcoded-mtext" >Chart Widget</span>
-                                            </a>
-                                        </li> -->
-
-                                   <!--  </ul>
-                                </li>  -->
                             </ul>
-                          
-                            <!-- <div class="pcoded-navigatio-lavel">UI Element</div> -->
-                           
-                            <ul class="pcoded-item pcoded-left-item">
-                               <!--  <li class="pcoded-hasmenu">
-                                    <a href="#">
-                                        <span class="pcoded-micon"><i class="feather icon-box"></i></span>
-                                        <span class="pcoded-mtext" >Subscriber</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>customer">
-                                                <span class="pcoded-mtext">Subscriber Registration</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/customer_list">
-                                                <span class="pcoded-mtext" >Subscriber List</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/Commission">
-                                                <span class="pcoded-mtext" >Commission</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/wallet">
-                                                <span class="pcoded-mtext" >Pay And Pay Wallet</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/daybook">
-                                                <span class="pcoded-mtext" >DayBook / Accounts</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/kyc">
-                                                <span class="pcoded-mtext" > Submission Of Money/KYC</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/sms">
-                                                <span class="pcoded-mtext" >SMS Facility</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/wallet">
-                                                <span class="pcoded-mtext" >Wallet</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/id_card">
-                                                <span class="pcoded-mtext">I.D. Card-Creater</span>
-                                            </a>
-                                        </li>
-                                     
-                                    </ul>
-                                </li> -->
-                             
-                               
-                
-                              <!--   <li class="pcoded-hasmenu">
-                                    <a href="#">
-                                        <span class="pcoded-micon"><i class="feather icon-gitlab"></i></span>
-                                        <span class="pcoded-mtext">Admin Approval System</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/payment">
-                                                <span class="pcoded-mtext" >Payment Approval</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/produact_manage">
-                                                <span class="pcoded-mtext" >Product Managment</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/others">
-                                                <span class="pcoded-mtext" >Others</span>
-                                            </a>
-                                        </li>
-                                 
-                                    </ul>
-                                </li> -->
-                               
-
-                                <!-- <li class="pcoded-hasmenu">
-                                    <a href="#">
-                                        <span class="pcoded-micon"><i class="feather icon-package"></i></span>
-                                        <span class="pcoded-mtext" >Account</span>
-                                    </a>
-                                    <ul class="pcoded-submenu">
-                                        <li class=" ">
-                                            <a href="<?php echo base_url();?>welcome/daybook">
-                                                <span class="pcoded-mtext" >Daybook Accounts</span>
-                                            </a>
-                                        </li>
-                                        <!-- <li class=" ">
-                                            <a href="session-idle-timeout.html">
-                                                <span class="pcoded-mtext" >Session Idle Timeout</span>
-                                            </a>
-                                        </li>
-                                        <li class=" ">
-                                            <a href="offline.html">
-                                                <span class="pcoded-mtext" >Offline</span>
-                                            </a>
-                                        </li> -->
-
-                                    <!--</ul>
-                                </li> -->
-                              
-                               
-                                <!-- <li class=" ">
-                                    <a href="animation.html">
-                                        <span class="pcoded-micon"><i class="feather icon-aperture rotate-refresh"></i><b>A</b></span>
-                                        <span class="pcoded-mtext" >Rules And Regulation</span>
-                                    </a>
-                                </li>
-                               
-                               
-                                <li class=" ">
-                                    <a href="<?php echo base_url();?>welcome/other_menu">
-                                        <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
-                                        <span class="pcoded-mtext" >Others Menu</span>
-                                        <span class="pcoded-badge label label-danger">HOT</span>
-                                    </a>
-                                </li>
-                               
+                           <!-- <ul class="pcoded-item pcoded-left-item">
+                             <!-- 
                                 <li class=" ">
                                     <a href="<?php echo base_url();?>tree">
                                         <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
@@ -263,24 +59,21 @@
                                         <span class="pcoded-badge label label-danger">HOT</span>
                                     </a>
                                 </li> -->
-                               <!--  <li class=" ">
+                             <!--    <li class=" ">
                                     <a href="<?php echo base_url();?>wallet">
                                         <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
                                         <span class="pcoded-mtext" >Wallet</span>
-                                        <!-- <span class="pcoded-badge label label-danger">Wallet</span> -->
-                                   <!--  </a>
-                                </li>
-                               
-
-                                <li class=" ">
+                                         <span class="pcoded-badge label label-danger">Wallet</span> 
+                                   </a>
+                                </li> -->
+                               <!--  <li class=" ">
                                     <a href="<?php echo base_url();?>sms">
                                         <span class="pcoded-micon"><i class="feather icon-cpu"></i></span>
                                         <span class="pcoded-mtext" >SMS Setting</span>
-                                        <!-- <span class="pcoded-badge label label-danger">SMS Setting</span> -->
-                                    <!--</a>
+                                        <span class="pcoded-badge label label-danger">SMS Setting</span>
+                                   </a>
                                 </li> -->
-                               
-                                <!-- <li class="pcoded-hasmenu">
+                               <!-- <li class="pcoded-hasmenu">
                                     <a href="<?php echo base_url();?>tree">
                                         <span class="pcoded-micon"><i class="feather icon-command"></i></span>
                                         <span class="pcoded-mtext" >Tree</span>
@@ -295,8 +88,8 @@
                                             <a href="<?php echo base_url();?>sms">
                                                 <span class="pcoded-mtext" >SMS Setting</span>
                                             </a>
-                                        </li> -->
-                                        <!-- <li class=" ">
+                                        </li>
+                                     <li class=" ">
                                             <a href="icon-simple-line.html">
                                                 <span class="pcoded-mtext" >Simple Line Icon</span>
                                             </a>
@@ -334,8 +127,8 @@
                                     </ul>
                                 </li>
                             </ul>-->
-                            <!-- <div class="pcoded-navigatio-lavel">Forms</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                        <!--   <div class="pcoded-navigatio-lavel">Forms</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-clipboard"></i></span>
@@ -473,9 +266,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Tables</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                            <!-- <div class="pcoded-navigatio-lavel">Tables</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-credit-card"></i></span>
@@ -689,9 +482,9 @@
                                         <span class="pcoded-mtext" >Editable Table</span>
                                     </a>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Chart And Maps</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                           <!--  <div class="pcoded-navigatio-lavel">Chart And Maps</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-pie-chart"></i></span>
@@ -799,9 +592,9 @@
                                         <span class="pcoded-mtext" >Landing Page</span>
                                     </a>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Pages</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                          <!--   <div class="pcoded-navigatio-lavel">Pages</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-unlock"></i></span>
@@ -1015,9 +808,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">App</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                            <!-- <div class="pcoded-navigatio-lavel">App</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class=" ">
                                     <a href="chat.html">
                                         <span class="pcoded-micon"><i class="feather icon-message-square"></i></span>
@@ -1158,9 +951,9 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Extension</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                           <!--  <div class="pcoded-navigatio-lavel">Extension</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-file-plus"></i></span>
@@ -1189,8 +982,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                            </ul>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-file-minus"></i></span>
@@ -1251,9 +1044,9 @@
                                         <span class="pcoded-mtext" >Change Loges</span>
                                     </a>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Other</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                            <!-- <div class="pcoded-navigatio-lavel">Other</div> -->
+                           <!--  <ul class="pcoded-item pcoded-left-item">
                                 <li class="pcoded-hasmenu ">
                                     <a href="#">
                                         <span class="pcoded-micon"><i class="feather icon-list"></i></span>
@@ -1297,9 +1090,9 @@
                                         <span class="pcoded-mtext" >Sample Page</span>
                                     </a>
                                 </li>
-                            </ul>
-                            <div class="pcoded-navigatio-lavel">Support</div>
-                            <ul class="pcoded-item pcoded-left-item">
+                            </ul> -->
+                           <!--  <div class="pcoded-navigatio-lavel">Support</div> -->
+                             <!-- <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
                                     <a href="http://html.codedthemes.com/Adminty/doc" target="_blank">
                                         <span class="pcoded-micon"><i class="feather icon-monitor"></i></span>
@@ -1312,9 +1105,9 @@
                                         <span class="pcoded-mtext" >Submit Issue</span>
                                     </a>
                                 </li> -->
-                               
-                        <!-- <div class="pcoded-navigatio-lavel">UI Element</div> -->
-                       <!--  <ul class="pcoded-item pcoded-left-item">
+                             
+                      <!-- <div class="pcoded-navigatio-lavel">UI Element</div> -->
+                      <!-- <ul class="pcoded-item pcoded-left-item">
                             <li class="pcoded-hasmenu">
                                 <a href="javascript:void(0)">
                                     <span class="pcoded-micon"><i class="feather icon-box"></i></span>
@@ -1578,16 +1371,11 @@
                                     </li>
                                 </ul>
                             </li>
-                        </ul> -->
-
-
-                            </ul> 
+                        </ul> 
+                            </ul> -->
                         </div>
                     </nav>
-
-
                     <!---This is Contend File --->
-
                     <div class="pcoded-content">
                     <div class="pcoded-inner-content">
                         <!-- Main-body start -->
